@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+
+  <url>
+    <loc>https://vanguardwheelco.com/</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://vanguardwheelco.com/about</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://vanguardwheelco.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://vanguardwheelco.com/blog/post-1</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-11</lastmod>
+  </url>
+
+</urlset>

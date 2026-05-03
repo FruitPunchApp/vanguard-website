@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XYVJ3RYYLT"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XYVJ3RYYLT');</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Monarchs | Vanguard Wheel Co.</title>
+  <meta name="description" content="Building Something Real, Together — the story behind the first Vanguard commission." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.vanguardwheelco.com/blog/post-2" />
+  <meta property="og:title" content="The Monarchs | Vanguard Wheel Co." />
+  <meta property="og:description" content="Building Something Real, Together — the story behind the first Vanguard commission." />
+  <meta property="og:image" content="https://vanguardwheelco.com/images/Monarch-design.png" />
+  <meta property="og:url" content="https://www.vanguardwheelco.com/blog/post-2" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="https://vanguardwheelco.com/images/Logo_60px.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Barlow:wght@300;400;500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #263040;
+      --navy-dk:   #1a2230;
+      --orange:    #e8631a;
+      --orange-lt: #f07840;
+      --cream:     #f0e8d0;
+      --cream-dk:  #e4dcc4;
+      --ink:       #1a1f28;
+      --white:     #faf7ef;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background-color: var(--cream); color: var(--navy); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    header { background-color: var(--navy); position: sticky; top: 0; z-index: 200; }
+    .header-inner { display: flex; align-items: stretch; height: 56px; }
+    .header-brand { background-color: var(--cream); display: flex; align-items: center; padding: 0 3rem 0 1.5rem; clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%); flex-shrink: 0; gap: 0.75rem; }
+    .header-brand img { height: 28px; width: auto; }
+    .header-wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .header-wordmark .wm-vanguard { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); }
+    .header-wordmark .wm-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.35em; text-transform: uppercase; color: var(--orange); }
+    .header-nav { display: flex; align-items: center; margin-left: auto; padding-right: 1rem; }
+    .header-nav a { color: rgba(240,232,208,0.6); font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0 1.25rem; height: 56px; display: flex; align-items: center; transition: color 0.2s, background 0.2s; border-left: 1px solid rgba(240,232,208,0.07); }
+    .header-nav a:hover { color: var(--cream); background: rgba(232,99,26,0.12); }
+    .header-ref { font-family: 'Courier Prime', monospace; font-size: 0.55rem; color: rgba(240,232,208,0.2); letter-spacing: 0.15em; padding: 0 1.25rem; display: flex; align-items: center; border-left: 1px solid rgba(240,232,208,0.07); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--cream); font-size: 1.4rem; cursor: pointer; padding: 0 1rem; height: 56px; align-items: center; }
+
+    /* MARQUEE */
+    .marquee-strip { background-color: var(--orange); overflow: hidden; white-space: nowrap; padding: 0.6rem 0; }
+    .marquee-track { display: inline-flex; animation: marquee 35s linear infinite; }
+    .marquee-track span { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cream); padding: 0 2rem; }
+    .marquee-track .dot { opacity: 0.45; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* BUTTONS */
+    .btn-primary { background-color: var(--orange); color: var(--cream); border: none; padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; display: inline-block; transition: background-color 0.2s; }
+    .btn-primary:hover { background-color: var(--orange-lt); }
+    .btn-ghost { background: transparent; color: rgba(240,232,208,0.6); border: 1px solid rgba(240,232,208,0.2); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; display: inline-block; transition: color 0.2s, border-color 0.2s; }
+    .btn-ghost:hover { color: var(--cream); border-color: rgba(240,232,208,0.5); }
+
+    /* SECTION CHROME */
+    .section-label { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--orange); opacity: 0.4; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 0.9; letter-spacing: -0.01em; }
+
+    /* FOOTER */
+    footer { background-color: var(--navy); padding: 0; }
+    .footer-inner { display: flex; align-items: stretch; justify-content: space-between; }
+    .footer-brand { background: var(--cream); clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 100%, 0 100%); padding: 1.75rem 3.5rem 1.75rem 1.75rem; display: flex; flex-direction: column; justify-content: center; }
+    .footer-brand .wm-vanguard { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); }
+    .footer-brand .wm-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.55rem; font-weight: 400; letter-spacing: 0.4em; text-transform: uppercase; color: var(--orange); }
+    .footer-nav { display: flex; align-items: center; }
+    .footer-nav a { color: rgba(240,232,208,0.4); font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 1.25rem; height: 100%; display: flex; align-items: center; border-left: 1px solid rgba(240,232,208,0.07); transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--cream); }
+    .footer-copy { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.15em; color: rgba(240,232,208,0.2); padding: 0 1.75rem; display: flex; align-items: center; border-left: 1px solid rgba(240,232,208,0.07); }
+
+    /* DARK MODE */
+    @media (prefers-color-scheme: dark) {
+      body { background-color: #1a2230; color: #e8e0c8; }
+      .prose-body { color: #aaa; }
+      .app-card { background: #1e2b3a; border-color: rgba(240,232,208,0.06); }
+      .app-card-title { color: #e8e0c8; }
+      .app-card-text { color: #888; }
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .header-ref { display: none; }
+      .header-nav { display: none; }
+      .menu-toggle { display: flex; }
+      .header-nav.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; width: 100%; background: var(--navy); z-index: 300; border-top: 1px solid rgba(240,232,208,0.08); }
+      .header-nav.open a { height: auto; padding: 1rem 1.5rem; border-left: none; border-bottom: 1px solid rgba(240,232,208,0.06); }
+      .footer-inner { flex-direction: column; }
+      .footer-brand { clip-path: none; padding: 1.5rem; }
+      .footer-nav { flex-wrap: wrap; padding: 1rem; border-top: 1px solid rgba(240,232,208,0.07); }
+      .footer-nav a { border-left: none; height: auto; padding: 0.5rem 0.75rem; }
+      .footer-copy { padding: 1rem 1.5rem; border-left: none; border-top: 1px solid rgba(240,232,208,0.07); }
+      .product-hero-label { left: 1.5rem; bottom: 2rem; }
+      .breadcrumb { padding: 0.85rem 1.5rem; }
+      .content-section { padding: 3rem 1.25rem; }
+      .content-section.dark .content-inner { padding: 3rem 1.25rem; }
+      .applications-section { padding: 3rem 1.25rem; }
+      .cta-section { padding: 3.5rem 1.25rem; }
+      .cta-links { flex-direction: column; align-items: center; }
+      .cta-links a { width: 100%; max-width: 320px; text-align: center; }
+      .app-grid { grid-template-columns: 1fr !important; }
+      .article-body { padding: 3rem 1.25rem; }
+    }
+    /* BLOG HERO */
+    .blog-hero { background-color: var(--navy); position: relative; overflow: hidden; padding: 6rem 4rem 4rem; }
+    .blog-hero-triangle { position: absolute; inset: 0; z-index: 1; }
+    .blog-hero-triangle svg { width: 100%; height: 100%; }
+    .blog-hero-content { position: relative; z-index: 2; max-width: 820px; }
+    .blog-hero-label { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--orange); margin-bottom: 1rem; }
+    .blog-hero-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; text-transform: uppercase; color: var(--cream); line-height: 0.9; margin-bottom: 1.25rem; }
+    .blog-hero-meta { font-family: 'Courier Prime', monospace; font-size: 0.65rem; letter-spacing: 0.15em; color: rgba(240,232,208,0.35); }
+
+    /* ARTICLE BODY */
+    .article-body { max-width: 720px; margin: 0 auto; padding: 5rem 2.5rem; }
+    .article-body p { font-size: 1rem; font-weight: 300; line-height: 1.95; color: #3a4455; margin-bottom: 1.5rem; }
+    .article-body b, .article-body strong { font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); display: block; margin-top: 2.5rem; margin-bottom: 0.75rem; }
+    .article-body img { width: 100%; max-width: 600px; display: block; margin: 2rem auto; filter: saturate(0.85); }
+    .article-body br { display: none; }
+    .article-rule { border: none; border-top: 1px solid rgba(232,99,26,0.15); margin: 3rem 0; }
+
+    @media (prefers-color-scheme: dark) {
+      .article-body p { color: rgba(240,232,208,0.65); }
+    }
+    @media (max-width: 768px) {
+      .blog-hero { padding: 4rem 1.5rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <div class="header-inner">
+      <div class="header-brand">
+        <img src="https://vanguardwheelco.com/images/Logo_60px.png" alt="Vanguard Wheel Co.">
+        <a href="https://vanguardwheelco.com" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+        <div class="header-wordmark">
+          <span class="wm-vanguard">Vanguard</span>
+          <span class="wm-sub">Wheel Co.</span>
+        </div>
+      </div>
+      </a>
+
+      <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
+
+      <nav class="header-nav" id="site-nav" aria-label="Main navigation">
+        <a href="https://vanguardwheelco.com">Home</a>
+        <a href="#designs">Designs</a>
+        <a href="#blog">Journal</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+
+    </div>
+  </header>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Made to Order</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span><span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Made to Order</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span>
+    </div>
+  </div>
+  <div class="blog-hero">
+    <div class="blog-hero-triangle" aria-hidden="true">
+      <svg viewBox="0 0 1440 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="0,0 1440,0 1440,280 900,280 680,400 0,0" fill="#f0e8d0" opacity="0.06"/>
+      </svg>
+    </div>
+    <div class="blog-hero-content">
+      <p class="blog-hero-label">Community · April 5, 2026</p>
+      <h1 class="blog-hero-title">The Monarchs:<br>Building Something<br>Real, Together</h1>
+      <p class="blog-hero-meta">VWC — Journal — 002</p>
+    </div>
+  </div>
+
+  <div class="article-body">
+    <p>When Vanguard Wheel Co. started, the goal was never just to make wheels. It was to create something expressive. Something with intention. Something tangible.</p>
+    <p>From day one, collaboration was part of that vision. Great design does not happen in a vacuum, and the best ideas usually come from working alongside people who care deeply about their vision. That mindset is what led to working with Mikey, and to the Monarchs.</p>
+
+    <hr class="article-rule">
+    <b>Why the C4 Corvette</b>
+    <p>If you had asked me early on what the first Vanguard design would ship on, a C4 Corvette probably would not have been my answer. But the more time I spent chatting with Mikey, the more sense it made.</p>
+    <p>The C4 sits at an interesting crossroads. It is modern enough to be capable, old enough to have character, and often overlooked in favor of newer platforms. That combination mirrors a lot of what Vanguard is about. Respect the past, but reinterpret it with modern engineering and detail.</p>
+    <p>The Monarchs were designed with that exact tension in mind. Classic Corvette proportions paired with contemporary surfacing and manufacturing. Nothing excessive. Nothing nostalgic for the sake of nostalgia.</p>
+
+    <hr class="article-rule">
+    <b>The Design Process</b>
+    <img src="https://vanguardwheelco.com/images/Monarch-design.png" alt="Monarch Design">
+    <p>The Monarchs started as sketches, but they quickly became conversations. We talked about how the car was going to be driven, what visual weight it needed, and how the wheel should look at speed as much as at rest. The goal was not to design a wheel that shouted for attention, but one that felt it was in the right place once it was bolted on.</p>
+    <p>Every detail was intentional. Spoke shape, depth, offset, transitions, and the way light moves across the face. The final design is clean without being plain, and aggressive without feeling forced.</p>
+    <p>That balance is difficult to get right, and it only happens when both sides are aligned on the outcome.</p>
+
+    <hr class="article-rule">
+    <b>Coach-Built, Fully Forged</b>
+    <img src="https://vanguardwheelco.com/images/IMG-2755.png" alt="Monarch Final">
+    <p>The Monarchs are fully forged from 6061-T6 aluminum and were built to order. No off-the-shelf specs. No compromises to make inventory easier.</p>
+    <p>This set is tailored to the exact car it is going on. Fitment, finish, and details are all part of the process. This is not about mass production. It is about building something specific, for someone specific.</p>
+    <p>That approach is and will remain central to Vanguard going forward.</p>
+
+    <hr class="article-rule">
+    <b>More Than One Wheel</b>
+    <p>While the Monarchs are the first wheel to ship, they are not the template for everything that comes next. This collaboration set the tone for how Vanguard wants to work. Close involvement. Honest feedback. Designs that come from real cars and real use cases.</p>
+    <p>At Vanguard, we will always explore different ideas, eras, and platforms, but the underlying philosophy will stay the same. Modern form, vintage soul.</p>
+
+    <hr class="article-rule">
+    <b>Looking Ahead</b>
+    <p>Working with Mikey has been a great example of why this company exists in the first place. To build things with people who are genuinely excited about their cars, and to create parts that feel fully thought out rather than disposable.</p>
+    <p>The Monarchs represent the beginning of that journey. There is more coming. New designs, new collaborations, and new directions. But everything starts here, with one wheel, one car, and a shared idea of what "better" looks like.</p>
+	<br>
+	<p>Follow along with Mikey's C4 Corvette build, and all of his other projects on Instagram at <a href="https://www.instagram.com/mikeyplayswithcars" style="color:var(--orange)" target="_blank" rel="noopener">@MikeyPlaysWithCars</a></p> 
+  </div>
+
+  <div class="cta-section">
+
+    <h2 style="margin-left: 40px;" class="cta-heading">Commission your set</h2>
+    <br>
+    <div class="cta-links">
+      <a href="https://www.instagram.com/vanguardwheelco" class="btn-primary" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:info@vanguardwheelco.com" class="btn-primary" style="background-color:var(--cream);color:var(--navy);">Send an Email</a>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand"><span class="wm-vanguard">Vanguard</span><span class="wm-sub">Wheel Co.</span></div>
+      <nav class="footer-nav">
+        <a href="/">Home</a><a href="/#designs">Designs</a><a href="/blog/index.html">Journal</a><a href="/#about">About</a><a href="/#contact">Contact</a>
+      </nav>
+      <span class="footer-copy">© 2026 Vanguard Wheel Co.</span>
+    </div>
+  </footer>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.textContent = isOpen ? '✕' : '☰';
+    });
+    nav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+      toggle.textContent = '☰';
+    }));
+  </script>
+</body>
+</html>
