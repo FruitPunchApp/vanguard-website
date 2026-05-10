@@ -23,442 +23,97 @@
   <meta property="og:type" content="website" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <link rel="icon" href="https://vanguardwheelco.com/images/Logo_60px.png" type="image/png" />
+  <link rel="apple-touch-icon" href="https://vanguardwheelco.com/images/Logo_60px.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Barlow:wght@300;400;500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
   <style>
-    /* =============================================
-       DESIGN SYSTEM — Saul Bass × Blue Note
-       Palette from SVG: #263040 navy, #e8631a orange, #f0e8d0 cream
-    ============================================= */
     :root {
-      --navy:    #263040;
-      --navy-dk: #1a2230;
-      --orange:  #e8631a;
+      --navy:      #263040;
+      --navy-dk:   #1a2230;
+      --orange:    #e8631a;
       --orange-lt: #f07840;
-      --cream:   #f0e8d0;
-      --cream-dk: #e4dcc4;
-      --ink:     #1a1f28;
-      --white:   #faf7ef;
+      --cream:     #f0e8d0;
+      --cream-dk:  #e4dcc4;
+      --ink:       #1a1f28;
+      --white:     #faf7ef;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Barlow', sans-serif;
-      background-color: var(--cream);
-      color: var(--navy);
-      overflow-x: hidden;
-      cursor: default;
-    }
-
+    body { font-family: 'Barlow', sans-serif; background-color: var(--cream); color: var(--navy); overflow-x: hidden; cursor: default; }
     a { text-decoration: none; color: inherit; }
 
-    /* =============================================
-       HEADER
-    ============================================= */
-    header {
-      background-color: var(--navy);
-      position: sticky;
-      top: 0;
-      z-index: 200;
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: stretch;
-      max-width: 100%;
-      height: 56px;
-    }
-
-    /* Cream diagonal wedge on left — echoes card geometry */
+    /* HEADER */
+    header { background-color: var(--navy); position: sticky; top: 0; z-index: 200; }
+    .header-inner { display: flex; align-items: stretch; max-width: 100%; height: 56px; }
     .header-brand {
       background-color: var(--cream);
       display: flex;
       align-items: center;
-      padding: 0 2rem 0 1.5rem;
+      padding: 0 3rem 0 1.5rem;
       clip-path: polygon(0 0, 100% 0, calc(100% - 24px) 100%, 0 100%);
-      padding-right: 3rem;
       flex-shrink: 0;
       gap: 0.75rem;
     }
+    .header-brand a { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+    .header-brand img { height: 28px; width: auto; }
+    .header-wordmark { display: flex; flex-direction: column; line-height: 1; }
+    .header-wordmark .wm-vanguard { font-family: 'Barlow Condensed', sans-serif; font-size: 1.05rem; font-weight: 900; letter-spacing: 0.18em; text-transform: uppercase; color: var(--navy); }
+    .header-wordmark .wm-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 400; letter-spacing: 0.35em; text-transform: uppercase; color: var(--orange); }
+    .header-nav { display: flex; align-items: center; gap: 0; margin-left: auto; padding-right: 1rem; }
+    .header-nav a { color: rgba(240,232,208,0.6); font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0 1.25rem; height: 56px; display: flex; align-items: center; transition: color 0.2s, background 0.2s; border-left: 1px solid rgba(240,232,208,0.07); }
+    .header-nav a:hover { color: var(--cream); background: rgba(232,99,26,0.12); }
+    .header-ref { font-family: 'Courier Prime', monospace; font-size: 0.55rem; color: rgba(240,232,208,0.2); letter-spacing: 0.15em; padding: 0 1.25rem; display: flex; align-items: center; border-left: 1px solid rgba(240,232,208,0.07); user-select: none; }
+    .menu-toggle { display: none; background: none; border: none; color: var(--cream); font-size: 1.4rem; cursor: pointer; padding: 0 1rem; height: 56px; align-items: center; }
 
-    .header-brand img {
-      height: 28px;
-      width: auto;
-    }
-
-    .header-wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .header-wordmark .wm-vanguard {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 900;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--navy);
-    }
-
-    .header-wordmark .wm-sub {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--orange);
-    }
-
-    .header-nav {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-left: auto;
-      padding-right: 1rem;
-    }
-
-    .header-nav a {
-      color: rgba(240,232,208,0.6);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0 1.25rem;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      transition: color 0.2s, background 0.2s;
-      border-left: 1px solid rgba(240,232,208,0.07);
-    }
-
-    .header-nav a:hover {
-      color: var(--cream);
-      background: rgba(232,99,26,0.12);
-    }
-
-    .header-ref {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.55rem;
-      color: rgba(240,232,208,0.2);
-      letter-spacing: 0.15em;
-      padding: 0 1.25rem;
-      display: flex;
-      align-items: center;
-      border-left: 1px solid rgba(240,232,208,0.07);
-      user-select: none;
-    }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--cream);
-      font-size: 1.4rem;
-      cursor: pointer;
-      padding: 0 1rem;
-      height: 56px;
-      align-items: center;
-    }
-
-    /* =============================================
-       HERO — full Saul Bass card geometry
-    ============================================= */
-    .hero {
-      position: relative;
-      height: 78vh;
-      min-height: 500px;
-      background-color: var(--navy);
-      overflow: hidden;
-    }
-
-    /* The big cream triangle from the card front */
-    .hero-triangle {
-      position: absolute;
-      inset: 0;
-      z-index: 3;
-    }
-
-    .hero-triangle svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Photo layer — sits below triangle overlay */
-    .hero-photo {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background-image: url('https://vanguardwheelco.com/images/Website-hero-1920.png');
-      background-size: cover;
-      background-position: center;
-      opacity: 1;
-    }
-
-    /* Gradient overlay for text legibility */
-    .hero-gradient {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      background: linear-gradient(
-        to top,
-        rgba(38,48,64,0.92) 0%,
-        rgba(38,48,64,0.4) 50%,
-        rgba(38,48,64,0.15) 100%
-      );
-    }
-    .hero-flame {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 220px;
-      height: 420px;
-      z-index: 3;
-    }
-
-    .hero-flame svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Hero text — bottom right like the card */
-    .hero-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 4;
-      padding: 3rem 4rem 4rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .hero-ref {
-      position: absolute;
-      top: 2rem;
-      right: 3rem;
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      color: rgba(240,232,208,0.25);
-      z-index: 5;
-    }
-
-    .hero-wordmark {
-      margin-bottom: 0.5rem;
-      opacity: 0;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-end;
-      width: fit-content;
-      animation: fadeUp 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
-    }
-
-    .hero-wordmark-vanguard {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(4.5rem, 12vw, 11rem);
-      font-weight: 900;
-      letter-spacing: -0.01em;
-      text-transform: uppercase;
-      color: var(--cream);
-      line-height: 0.88;
-      display: block;
-    }
-
-    .hero-wordmark-sub {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(.2rem, 3.5vw, 3rem);
-      font-weight: 600;
-      letter-spacing: 0.42em;
-      text-transform: uppercase;
-      color: var(--orange);
-      display: block;
-      margin-top: 0.25rem;
-    }
-
-    .hero-tagline {
-      margin-top: 1.75rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
-    }
-
-    .hero-tagline p {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(2.5rem, 4.5vw, 3rem);
-      font-style: italic;
-      font-weight: 400;
-      color: rgba(240,232,208,0.75);
-      line-height: 1.3;
-    }
-
+    /* HERO */
+    .hero { position: relative; height: 78vh; min-height: 500px; background-color: var(--navy); overflow: hidden; }
+    .hero-triangle { position: absolute; inset: 0; z-index: 3; }
+    .hero-triangle svg { width: 100%; height: 100%; }
+    .hero-photo { position: absolute; inset: 0; z-index: 1; background-image: url('https://vanguardwheelco.com/images/Website-hero-1920.png'); background-size: cover; background-position: center; opacity: 1; }
+    .hero-gradient { position: absolute; inset: 0; z-index: 2; background: linear-gradient(to top, rgba(38,48,64,0.92) 0%, rgba(38,48,64,0.4) 50%, rgba(38,48,64,0.15) 100%); }
+    .hero-flame { position: absolute; bottom: 0; left: 0; width: 220px; height: 420px; z-index: 4; }
+    .hero-flame svg { width: 100%; height: 100%; }
+    .hero-content { position: absolute; bottom: 0; left: 0; right: 0; z-index: 5; padding: 3rem 4rem 4rem; display: flex; flex-direction: column; justify-content: flex-end; }
+    .hero-ref { position: absolute; top: 2rem; right: 3rem; font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(240,232,208,0.25); z-index: 6; }
+    .hero-wordmark { margin-bottom: 0.5rem; opacity: 0; display: inline-flex; flex-direction: column; align-items: flex-end; width: fit-content; animation: fadeUp 0.9s 0.2s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-wordmark-vanguard { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(4.5rem, 12vw, 11rem); font-weight: 900; letter-spacing: -0.01em; text-transform: uppercase; color: var(--cream); line-height: 0.88; display: block; }
+    .hero-wordmark-sub { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(1.2rem, 3.5vw, 3rem); font-weight: 600; letter-spacing: 0.42em; text-transform: uppercase; color: var(--orange); display: block; margin-top: 0.25rem; }
+    .hero-tagline { margin-top: 1.75rem; opacity: 0; animation: fadeUp 0.9s 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
+    .hero-tagline p { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.5rem, 4.5vw, 3rem); font-style: italic; font-weight: 400; color: rgba(240,232,208,0.75); line-height: 1.3; }
     .hero-tagline p + p { margin-top: 0.1rem; }
+    .hero-actions { display: flex; gap: 0; margin-top: 2.5rem; opacity: 0; animation: fadeUp 0.9s 0.75s cubic-bezier(0.16,1,0.3,1) forwards; }
 
-    .hero-actions {
-      display: flex;
-      gap: 0;
-      margin-top: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.75s cubic-bezier(0.16,1,0.3,1) forwards;
-    }
-
-    .btn-primary {
-      background-color: var(--orange);
-      color: var(--cream);
-      border: none;
-      padding: 0.85rem 2rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: inline-block;
-      transition: background-color 0.2s;
-    }
-
+    .btn-primary { background-color: var(--orange); color: var(--cream); border: none; padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; display: inline-block; transition: background-color 0.2s; }
     .btn-primary:hover { background-color: var(--orange-lt); }
-
-    .btn-ghost {
-      background: transparent;
-      color: rgba(240,232,208,0.6);
-      border: 1px solid rgba(240,232,208,0.2);
-      padding: 0.85rem 2rem;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: inline-block;
-      transition: color 0.2s, border-color 0.2s;
-    }
-
+    .btn-ghost { background: transparent; color: rgba(240,232,208,0.6); border: 1px solid rgba(240,232,208,0.2); padding: 0.85rem 2rem; font-family: 'Barlow Condensed', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; display: inline-block; transition: color 0.2s, border-color 0.2s; }
     .btn-ghost:hover { color: var(--cream); border-color: rgba(240,232,208,0.5); }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* =============================================
-       MARQUEE — orange bar like card stripe
-    ============================================= */
-    .marquee-strip {
-      background-color: var(--orange);
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 0.6rem 0;
-    }
-
-    .marquee-track {
-      display: inline-flex;
-      animation: marquee 35s linear infinite;
-    }
-
-    .marquee-track span {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--cream);
-      padding: 0 2rem;
-    }
-
+    /* MARQUEE */
+    .marquee-strip { background-color: var(--orange); overflow: hidden; white-space: nowrap; padding: 0.6rem 0; }
+    .marquee-track { display: inline-flex; animation: marquee 35s linear infinite; }
+    .marquee-track span { font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; color: var(--cream); padding: 0 2rem; }
     .marquee-track .dot { opacity: 0.45; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to   { transform: translateX(-50%); }
-    }
+    /* SECTION CHROME */
+    .section-label { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--orange); margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem; }
+    .section-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--orange); opacity: 0.4; }
+    .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; text-transform: uppercase; line-height: 0.9; letter-spacing: -0.01em; }
 
-    /* =============================================
-       SECTION CHROME
-    ============================================= */
-    .section-label {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 1.25rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .section-label::after {
-      content: '';
-      flex: 1;
-      max-width: 60px;
-      height: 1px;
-      background: var(--orange);
-      opacity: 0.4;
-    }
-
-    .section-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.9;
-      letter-spacing: -0.01em;
-    }
-
-    /* =============================================
-       GALLERY — Designs
-    ============================================= */
-    #designs {
-      background-color: var(--navy-dk);
-      padding: 5rem 0 0;
-    }
-
-    .gallery-head {
-      padding: 0 4rem 3rem;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 2rem;
-    }
-
-    .gallery-head .section-title {
-      font-size: clamp(3rem, 7vw, 6rem);
-      color: var(--cream);
-    }
-
-    .gallery-head .section-title em {
-      color: var(--orange);
-      font-style: italic;
-    }
-
-    .gallery-ref {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      color: rgba(240,232,208,0.2);
-      white-space: nowrap;
-      padding-bottom: 0.5rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 3px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-      background: var(--navy);
-    }
-
+    /* WHEEL GALLERY */
+    #designs { background-color: var(--navy-dk); padding: 5rem 0 0; }
+    .gallery-head { padding: 0 4rem 3rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
+    .gallery-head .section-title { font-size: clamp(3rem, 7vw, 6rem); color: var(--cream); }
+    .gallery-head .section-title em { color: var(--orange); font-style: italic; }
+    .gallery-ref { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(240,232,208,0.2); white-space: nowrap; padding-bottom: 0.5rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; max-width: 1100px; margin: 0 auto; }
+    .gallery-item { position: relative; overflow: hidden; cursor: pointer; background: var(--navy); }
     .gallery-item:nth-child(1) { grid-column: span 7; grid-row: span 2; }
     .gallery-item:nth-child(2) { grid-column: span 5; }
     .gallery-item:nth-child(3) { grid-column: span 5; }
@@ -466,543 +121,94 @@
     .gallery-item:nth-child(5) { grid-column: span 3; }
     .gallery-item:nth-child(6) { grid-column: span 3; }
     .gallery-item:nth-child(7) { grid-column: span 3; }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      min-height: 220px;
-      filter: saturate(0.85);
-      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s;
-    }
-
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 200px; filter: saturate(0.85); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .gallery-item:hover img { transform: scale(1.06); filter: saturate(1); }
-
-    .gallery-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      border: 1px dashed rgba(240,232,208,0.1);
-    }
-
-    .gallery-placeholder span {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(240,232,208,0.2);
-    }
-
-    .gallery-item-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(38,48,64,0.7) 0%, transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      display: flex;
-      align-items: flex-end;
-      padding: 1.25rem;
-    }
-
+    .gallery-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; border: 1px dashed rgba(240,232,208,0.1); }
+    .gallery-placeholder span { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,208,0.2); }
+    .gallery-item-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,48,64,0.7) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.25rem; }
     .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-item-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); border-left: 2px solid var(--orange); padding-left: 0.5rem; }
+    .gallery-foot { padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
+    .gallery-foot p { font-family: 'Courier Prime', monospace; font-size: 0.7rem; color: rgba(240,232,208,0.3); letter-spacing: 0.1em; }
 
-    .gallery-item-tag {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--orange);
-      border-left: 2px solid var(--orange);
-      padding-left: 0.5rem;
-    }
-
-    .gallery-foot {
-      padding: 2.5rem 4rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .gallery-foot p {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.7rem;
-      color: rgba(240,232,208,0.3);
-      letter-spacing: 0.1em;
-    }
-
-    /* =============================================
-       ON-CAR GALLERY
-    ============================================= */
-    #on-car {
-      background-color: var(--cream-dk);
-      padding: 5rem 0 0;
-    }
-
-    .on-car-head {
-      padding: 0 4rem 3rem;
-    }
-
-    .on-car-head .section-title {
-      font-size: clamp(3rem, 7vw, 6rem);
-      color: var(--navy);
-    }
-
-    .on-car-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3px;
-    }
-
-    .on-car-item {
-      position: relative;
-      overflow: hidden;
-      background: var(--navy);
-    }
-
-    .on-car-item img {
-      width: 100%;
-      height: 320px;
-      object-fit: cover;
-      display: block;
-      filter: saturate(0.8);
-      transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s;
-    }
-
+    /* ON-CAR GALLERY */
+    #on-car { background-color: var(--cream-dk); padding: 5rem 0 0; }
+    .on-car-head { padding: 0 4rem 3rem; }
+    .on-car-head .section-title { font-size: clamp(3rem, 7vw, 6rem); color: var(--navy); }
+    .on-car-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 1100px; margin: 0 auto; }
+    .on-car-item { position: relative; overflow: hidden; background: var(--navy); }
+    .on-car-item img { width: 100%; height: 260px; object-fit: cover; display: block; filter: saturate(0.8); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .on-car-item:hover img { transform: scale(1.05); filter: saturate(1); }
-
-    .on-car-placeholder {
-      width: 100%;
-      height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px dashed rgba(240,232,208,0.1);
-    }
-
-    .on-car-placeholder span {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(240,232,208,0.2);
-    }
-
-    .on-car-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(38,48,64,0.6), transparent 50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      display: flex;
-      align-items: flex-end;
-      padding: 1.25rem;
-    }
-
+    .on-car-placeholder { width: 100%; height: 260px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(240,232,208,0.1); }
+    .on-car-placeholder span { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,208,0.2); }
+    .on-car-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,48,64,0.6), transparent 50%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.25rem; }
     .on-car-item:hover .on-car-overlay { opacity: 1; }
+    .on-car-foot { padding: 2.5rem 4rem; display: flex; justify-content: flex-end; max-width: 1100px; margin: 0 auto; }
 
-    .on-car-foot {
-      padding: 2.5rem 4rem;
-      display: flex;
-      justify-content: flex-end;
-    }
-
-    /* =============================================
-       ABOUT — card back geometry
-    ============================================= */
-    #about {
-      background-color: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Top cream strip — echoes card back polygon */
-    .about-strip {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: var(--cream);
-      clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%);
-      z-index: 1;
-    }
-
-    /* Orange flame — bottom right, mirrored from card */
-    .about-flame {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 180px;
-      height: 360px;
-      z-index: 1;
-      transform: scaleX(-1);
-    }
-
+    /* ABOUT */
+    #about { background-color: var(--navy); position: relative; overflow: hidden; }
+    .about-strip { position: absolute; top: 0; left: 0; right: 0; height: 80px; background: var(--cream); clip-path: polygon(0 0, 100% 0, 60% 100%, 0 100%); z-index: 1; }
+    .about-flame { position: absolute; bottom: 0; right: 0; width: 180px; height: 360px; z-index: 1; transform: scaleX(-1); }
     .about-flame svg { width: 100%; height: 100%; }
-
-    .about-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 8rem 4rem 6rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
+    .about-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 8rem 4rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
     .about-left .section-label { color: var(--orange); }
     .about-left .section-label::after { background: var(--orange); }
-
-    .about-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(3rem, 5vw, 5rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.9;
-      color: var(--cream);
-      margin-bottom: 2rem;
-    }
-
-    .about-title em {
-      font-style: italic;
-      color: var(--orange);
-      font-weight: 700;
-    }
-
-    .about-prose {
-      font-size: 0.95rem;
-      font-weight: 300;
-      line-height: 1.9;
-      color: rgba(240,232,208,0.65);
-    }
-
+    .about-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3rem, 5vw, 5rem); font-weight: 900; text-transform: uppercase; line-height: 0.9; color: var(--cream); margin-bottom: 2rem; }
+    .about-title em { font-style: italic; color: var(--orange); font-weight: 700; }
+    .about-prose { font-size: 0.95rem; font-weight: 300; line-height: 1.9; color: rgba(240,232,208,0.65); }
     .about-prose p + p { margin-top: 1.25rem; }
-
-    .about-prose .pull {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.4rem;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--orange);
-      border-left: 3px solid var(--orange);
-      padding: 0.25rem 0 0.25rem 1rem;
-      margin: 2rem 0;
-      line-height: 1.3;
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-
-    .stat-item {
-      padding: 2rem;
-      border-top: 1px solid rgba(240,232,208,0.1);
-      border-left: 1px solid rgba(240,232,208,0.1);
-    }
-
+    .about-prose .pull { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-style: italic; font-weight: 400; color: var(--orange); border-left: 3px solid var(--orange); padding: 0.25rem 0 0.25rem 1rem; margin: 2rem 0; line-height: 1.3; }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .stat-item { padding: 2rem; border-top: 1px solid rgba(240,232,208,0.1); border-left: 1px solid rgba(240,232,208,0.1); }
     .stat-item:nth-child(odd) { border-left: none; padding-left: 0; }
-    .stat-item:nth-child(1),
-    .stat-item:nth-child(2) { border-top: none; }
+    .stat-item:nth-child(1), .stat-item:nth-child(2) { border-top: none; }
+    .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 4rem; font-weight: 900; color: var(--orange); line-height: 1; margin-bottom: 0.4rem; }
+    .stat-lbl { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(240,232,208,0.35); }
 
-    .stat-num {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 4rem;
-      font-weight: 900;
-      color: var(--orange);
-      line-height: 1;
-      margin-bottom: 0.4rem;
-    }
-
-    .stat-lbl {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: rgba(240,232,208,0.35);
-    }
-
-    /* =============================================
-       JOURNAL
-    ============================================= */
-    #blog {
-      background-color: var(--cream);
-      padding: 5rem 4rem;
-    }
-
-    .blog-head {
-      margin-bottom: 3rem;
-      display: flex;
-      align-items: flex-end;
-      gap: 3rem;
-    }
-
-    .blog-head .section-title {
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      color: var(--navy);
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 3px;
-    }
-
-    .blog-card {
-      background: var(--navy);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
-      cursor: pointer;
-    }
-
+    /* JOURNAL */
+    #blog { background-color: var(--cream); padding: 5rem 4rem; }
+    .blog-head { margin-bottom: 3rem; display: flex; align-items: flex-end; gap: 3rem; }
+    .blog-head .section-title { font-size: clamp(3rem, 6vw, 5.5rem); color: var(--navy); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3px; }
+    .blog-card { background: var(--navy); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); cursor: pointer; }
     .blog-card:hover { transform: translateY(-4px); }
-
-    .blog-card-img {
-      height: 260px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .blog-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      filter: saturate(0.7);
-      transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s;
-    }
-
+    .blog-card-img { height: 260px; overflow: hidden; position: relative; }
+    .blog-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.7); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .blog-card:hover .blog-card-img img { transform: scale(1.05); filter: saturate(1); }
-
-    .blog-card-img-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(38,48,64,0.8), transparent 60%);
-    }
-
-    .blog-card-body {
-      padding: 1.75rem 2rem 2rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card-tag {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--orange);
-      margin-bottom: 0.75rem;
-    }
-
-    .blog-card-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: var(--cream);
-      line-height: 1.05;
-      margin-bottom: 1rem;
-      letter-spacing: 0.01em;
-    }
-
-    .blog-card-link {
-      margin-top: auto;
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--orange);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transition: gap 0.2s;
-    }
-
+    .blog-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,48,64,0.8), transparent 60%); }
+    .blog-card-body { padding: 1.75rem 2rem 2rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-card-tag { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.75rem; }
+    .blog-card-title { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 700; text-transform: uppercase; color: var(--cream); line-height: 1.05; margin-bottom: 1rem; letter-spacing: 0.01em; }
+    .blog-card-link { margin-top: auto; font-family: 'Barlow Condensed', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); display: flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
     .blog-card:hover .blog-card-link { gap: 0.85rem; }
 
-    /* =============================================
-       CONTACT
-    ============================================= */
-    #contact {
-      background-color: var(--cream-dk);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Diagonal block echoing back-card geometry */
-    .contact-accent {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 100%;
-      background: var(--navy);
-      clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
-    }
-
-    .contact-inner {
-      position: relative;
-      z-index: 2;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 6rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 4rem;
-      align-items: center;
-    }
-
+    /* CONTACT */
+    #contact { background-color: var(--cream-dk); position: relative; overflow: hidden; }
+    .contact-accent { position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: var(--navy); clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%); }
+    .contact-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 6rem 4rem; display: grid; grid-template-columns: 1fr auto; gap: 4rem; align-items: center; }
     .contact-left .section-label::after { background: var(--orange); }
-
-    .contact-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 0.9;
-      color: var(--navy);
-      margin-bottom: 1.25rem;
-    }
-
-    .contact-sub {
-      font-size: 0.9rem;
-      font-weight: 300;
-      color: rgba(38,48,64,0.6);
-      margin-bottom: 2.5rem;
-      max-width: 380px;
-    }
-
+    .contact-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; text-transform: uppercase; line-height: 0.9; color: var(--navy); margin-bottom: 1.25rem; }
+    .contact-sub { font-size: 0.9rem; font-weight: 300; color: rgba(38,48,64,0.6); margin-bottom: 2.5rem; max-width: 380px; }
     .contact-links { display: flex; gap: 0; }
+    .contact-details { display: flex; flex-direction: column; gap: 0; }
+    .contact-detail-item { display: flex; align-items: center; gap: 1rem; padding: 0.85rem 0; border-bottom: 1px solid rgba(38,48,64,0.1); }
+    .contact-dot { width: 5px; height: 5px; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+    .contact-detail-item span { font-family: 'Courier Prime', monospace; font-size: 0.8rem; color: var(--navy); opacity: 0.7; }
 
-    /* Contact details — right side, card back style */
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-
-    .contact-detail-item {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.85rem 0;
-      border-bottom: 1px solid rgba(38,48,64,0.1);
-    }
-
-    .contact-dot {
-      width: 5px;
-      height: 5px;
-      background: var(--orange);
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .contact-detail-item span {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.8rem;
-      color: var(--navy);
-      opacity: 0.7;
-    }
-
-    /* =============================================
-       FOOTER
-    ============================================= */
-    footer {
-      background-color: var(--navy);
-      padding: 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: stretch;
-      justify-content: space-between;
-    }
-
-    /* Cream wedge on left — mirrors header */
-    .footer-brand {
-      background: var(--cream);
-      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 100%, 0 100%);
-      padding: 1.75rem 3.5rem 1.75rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .footer-brand .wm-vanguard {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 900;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--navy);
-    }
-
-    .footer-brand .wm-sub {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.55rem;
-      font-weight: 400;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: var(--orange);
-    }
-
-    .footer-nav {
-      display: flex;
-      align-items: center;
-      gap: 0;
-    }
-
-    .footer-nav a {
-      color: rgba(240,232,208,0.4);
-      font-family: 'Barlow Condensed', sans-serif;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      padding: 0 1.25rem;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      border-left: 1px solid rgba(240,232,208,0.07);
-      transition: color 0.2s;
-    }
-
+    /* FOOTER */
+    footer { background-color: var(--navy); padding: 0; }
+    .footer-inner { display: flex; align-items: stretch; justify-content: space-between; }
+    .footer-brand { background: var(--cream); clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 100%, 0 100%); padding: 1.75rem 3.5rem 1.75rem 1.75rem; display: flex; flex-direction: column; justify-content: center; }
+    .footer-brand .wm-vanguard { font-family: 'Barlow Condensed', sans-serif; font-size: 0.9rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); }
+    .footer-brand .wm-sub { font-family: 'Barlow Condensed', sans-serif; font-size: 0.55rem; font-weight: 400; letter-spacing: 0.4em; text-transform: uppercase; color: var(--orange); }
+    .footer-nav { display: flex; align-items: center; gap: 0; }
+    .footer-nav a { color: rgba(240,232,208,0.4); font-family: 'Barlow Condensed', sans-serif; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 0 1.25rem; height: 100%; display: flex; align-items: center; border-left: 1px solid rgba(240,232,208,0.07); transition: color 0.2s; }
     .footer-nav a:hover { color: var(--cream); }
+    .footer-copy { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.15em; color: rgba(240,232,208,0.2); padding: 0 1.75rem; display: flex; align-items: center; border-left: 1px solid rgba(240,232,208,0.07); }
 
-    .footer-copy {
-      font-family: 'Courier Prime', monospace;
-      font-size: 0.55rem;
-      letter-spacing: 0.15em;
-      color: rgba(240,232,208,0.2);
-      padding: 0 1.75rem;
-      display: flex;
-      align-items: center;
-      border-left: 1px solid rgba(240,232,208,0.07);
-    }
-
-    /* =============================================
-       DARK MODE
-    ============================================= */
+    /* DARK MODE */
     @media (prefers-color-scheme: dark) {
-      :root {
-        --cream: #e8e0c8;
-        --cream-dk: #ddd5bc;
-        --white: #e0d8c0;
-      }
+      :root { --cream: #e8e0c8; --cream-dk: #ddd5bc; --white: #e0d8c0; }
       #blog { background-color: var(--navy-dk); }
       .blog-head .section-title { color: var(--cream); }
       #on-car { background-color: #1a2230; }
@@ -1014,9 +220,7 @@
       .contact-detail-item { border-color: rgba(240,232,208,0.1); }
     }
 
-    /* =============================================
-       MOBILE
-    ============================================= */
+    /* MOBILE — 900px */
     @media (max-width: 900px) {
       .about-inner { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 2rem 4rem; }
       .contact-inner { grid-template-columns: 1fr; }
@@ -1028,39 +232,17 @@
       .blog-grid { grid-template-columns: 1fr; }
     }
 
+    /* MOBILE — 768px */
     @media (max-width: 768px) {
       .header-ref { display: none; }
       .header-nav { display: none; }
       .menu-toggle { display: flex; }
-      .header-nav.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        width: 100%;
-        background: var(--navy);
-        border-top: 1px solid rgba(240,232,208,0.08);
-        z-index: 300;
-      }
-      
- 
- 	 .hero-wordmark-sub {
-    	font-weight: 700;
-    	font-size: clamp(1rem, 5vw, 1.5rem);
-  }
-}
-      
-      .header-nav.open a {
-        height: auto;
-        padding: 1rem 1.5rem;
-        border-left: none;
-        border-bottom: 1px solid rgba(240,232,208,0.06);
-      }
-
-      .hero-content { padding: 2rem 1.5rem 3rem; padding-left: 2.5rem;
-   }
-      .hero-ref { right: 1.5rem; }     .gallery-head { padding: 0 1.5rem 2rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .header-nav.open { display: flex; flex-direction: column; position: absolute; top: 56px; left: 0; width: 100%; background: var(--navy); border-top: 1px solid rgba(240,232,208,0.08); z-index: 300; }
+      .header-nav.open a { height: auto; padding: 1rem 1.5rem; border-left: none; border-bottom: 1px solid rgba(240,232,208,0.06); }
+      .hero-wordmark-sub { font-weight: 700; font-size: clamp(1rem, 5vw, 1.5rem); }
+      .hero-content { padding: 2rem 2.5rem 3rem; }
+      .hero-ref { right: 1.5rem; }
+      .gallery-head { padding: 0 1.5rem 2rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .gallery-foot { padding: 1.5rem; }
       .on-car-head { padding: 0 1.5rem 2rem; }
       .on-car-foot { padding: 1.5rem; }
@@ -1072,8 +254,7 @@
       .on-car-grid { grid-template-columns: 1fr; }
       .about-strip { height: 50px; }
       .hero-actions { flex-direction: column; }
-      .hero-actions .btn-primary,
-      .hero-actions .btn-ghost { width: 100%; text-align: center; }
+      .hero-actions .btn-primary, .hero-actions .btn-ghost { width: 100%; text-align: center; }
       .footer-inner { flex-direction: column; }
       .footer-brand { clip-path: none; padding: 1.5rem; }
       .footer-nav { flex-wrap: wrap; padding: 1rem; border-top: 1px solid rgba(240,232,208,0.07); }
@@ -1082,71 +263,60 @@
       .stat-item:nth-child(odd) { padding-left: 2rem; border-left: 1px solid rgba(240,232,208,0.1); }
     }
 
+    /* MOBILE — 480px */
     @media (max-width: 480px) {
       .about-stats { grid-template-columns: 1fr; }
       .stat-item:nth-child(n) { border-left: none; padding-left: 0; }
       .stat-item:nth-child(2) { border-top: 1px solid rgba(240,232,208,0.1); }
       .contact-links { flex-direction: column; }
-      .contact-links .btn-primary,
-      .contact-links .btn-ghost { text-align: center; }
+      .contact-links .btn-primary, .contact-links .btn-ghost { text-align: center; }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== HEADER ===== -->
+  <!-- HEADER -->
   <header>
     <div class="header-inner">
       <div class="header-brand">
-        <img src="https://vanguardwheelco.com/images/Logo_60px.png" alt="Vanguard Wheel Co.">
-        <a href="https://vanguardwheelco.com" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
-        <div class="header-wordmark">
-          <span class="wm-vanguard">Vanguard</span>
-          <span class="wm-sub">Wheel Co.</span>
-        </div>
+        <a href="https://vanguardwheelco.com">
+          <img src="https://vanguardwheelco.com/images/Logo_60px.png" alt="Vanguard Wheel Co.">
+          <div class="header-wordmark">
+            <span class="wm-vanguard">Vanguard</span>
+            <span class="wm-sub">Wheel Co.</span>
+          </div>
+        </a>
       </div>
-      </a>
-
       <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">☰</button>
-
       <nav class="header-nav" id="site-nav" aria-label="Main navigation">
         <a href="https://vanguardwheelco.com">Home</a>
         <a href="#designs">Designs</a>
+        <a href="#on-car">On the Road</a>
         <a href="#blog">Journal</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-
-
+      <span class="header-ref">VWC — 001</span>
     </div>
   </header>
 
-  <!-- ===== HERO ===== -->
+  <!-- HERO -->
   <section class="hero">
-    <!-- Cream triangle from card front -->
     <div class="hero-triangle" aria-hidden="true">
       <svg viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <polygon points="0,0 1440,0 1440,380 920,380 700,560 0,0" fill="#f0e8d0" opacity="0.08"/>
         <polygon points="0,0 1440,0 1440,320 860,320 660,480 0,0" fill="#f0e8d0" opacity="0.04"/>
       </svg>
     </div>
-
-    <!-- Photo layer -->
     <div class="hero-photo" aria-hidden="true"></div>
-
-    <!-- Gradient overlay -->
     <div class="hero-gradient" aria-hidden="true"></div>
-
-    <!-- Orange flame -->
     <div class="hero-flame" aria-hidden="true">
       <svg viewBox="90 0 220 420" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
-         <path d="M28.88217,282.97456l.78203-78.9849C23.40797,141.42737-20.52025,60.73002,11.67754,18.64887,41.04258-20.41873,169.92174,2.82612,220.47919,79.6471c29.71709,49.64184-17.25761,76.0047,1.41325,100.50236,18.07247,22.52482,64.27716,16.59008,84.60991,57.46743,26.58897,62.35043-230.69846,111.8301-281.53032,112.61213l3.91014-67.25447Z" fill="#e8631a"/>
+        <path d="M28.88217,282.97456l.78203-78.9849C23.40797,141.42737-20.52025,60.73002,11.67754,18.64887,41.04258-20.41873,169.92174,2.82612,220.47919,79.6471c29.71709,49.64184-17.25761,76.0047,1.41325,100.50236,18.07247,22.52482,64.27716,16.59008,84.60991,57.46743,26.58897,62.35043-230.69846,111.8301-281.53032,112.61213l3.91014-67.25447Z" fill="#e8631a"/>
       </svg>
     </div>
-
     <span class="hero-ref">VWC — 001</span>
-
     <div class="hero-content">
       <div class="hero-wordmark">
         <span class="hero-wordmark-vanguard">Vanguard</span>
@@ -1163,108 +333,106 @@
     </div>
   </section>
 
-  <!-- ===== MARQUEE ===== -->
+  <!-- MARQUEE -->
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-track">
-      <span>Bespoke Design</span><span class="dot">✦</span>
-      <span>Forged Craftsmanship</span><span class="dot">✦</span>
-      <span>Retro Aesthetics</span><span class="dot">✦</span>
-      <span>Modern Engineering</span><span class="dot">✦</span>
-      <span>Made to Order</span><span class="dot">✦</span>
-      <span>Custom Finish</span><span class="dot">✦</span>
-      <span>Bespoke Design</span><span class="dot">✦</span>
-      <span>Forged Craftsmanship</span><span class="dot">✦</span>
-      <span>Retro Aesthetics</span><span class="dot">✦</span>
-      <span>Modern Engineering</span><span class="dot">✦</span>
-      <span>Made to Order</span><span class="dot">✦</span>
-      <span>Custom Finish</span><span class="dot">✦</span>
+      <span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Made to Order</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span><span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Made to Order</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span>
     </div>
   </div>
 
-  <!-- ===== WHEEL GALLERY ===== -->
+  <!-- WHEEL GALLERY -->
   <section id="designs">
     <div class="gallery-head">
       <div>
-        <div class="section-label" style="color:rgba(240,232,208,0.4);">The Designs<span style="background:rgba(240,232,208,0.2);"></span></div>
+        <div class="section-label" style="color:rgba(240,232,208,0.4);">The Designs</div>
         <h2 class="section-title">Wheel<br><em>Gallery</em></h2>
       </div>
       <span class="gallery-ref">VWC — 002</span>
     </div>
-
     <div class="gallery-grid">
       <div class="gallery-item">
         <img src="https://vanguardwheelco.com/images/IMG-1842.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-
+        <div class="gallery-placeholder"><span>Featured Shot</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">Featured</span></div>
       </div>
       <div class="gallery-item">
         <img src="https://vanguardwheelco.com/images/IMG-1886.png" alt="Wheel detail" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-
+        <div class="gallery-placeholder"><span>Detail Shot</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">Detail</span></div>
       </div>
       <div class="gallery-item">
         <img src="https://vanguardwheelco.com/images/IMG-1592.png" alt="Wheel on vehicle" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-
+        <div class="gallery-placeholder"><span>On-Car Shot</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
       <div class="gallery-item">
         <img src="https://vanguardwheelco.com/images/IMG-1590.png" alt="Wheel finish" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-
+        <div class="gallery-placeholder"><span>Finish Detail</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">Finish</span></div>
       </div>
       <div class="gallery-item">
         <img src="https://vanguardwheelco.com/images/IMG-2986.png" alt="Wheel spoke design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-
+        <div class="gallery-placeholder"><span>Spoke Design</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">Design</span></div>
       </div>
       <div class="gallery-item">
         <img src="https://vanguardwheelco.com/images/IMG-3024.png" alt="Wheel lifestyle" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        
+        <div class="gallery-placeholder"><span>Lifestyle Shot</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">Lifestyle</span></div>
       </div>
       <div class="gallery-item">
-      <img src="https://vanguardwheelco.com/images/Corvette-Standard-18x10-5J-rim-profile-update.png" alt="Wheel lifestyle" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <img src="https://vanguardwheelco.com/images/Corvette-Standard-18x10-5J-rim-profile-update.png" alt="Corvette wheel" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <div class="gallery-placeholder"><span>Coming Soon</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-item-tag">Design</span></div>
       </div>
     </div>
-
     <div class="gallery-foot">
       <p>All wheels are made to order — no two sets are identical.</p>
       <a href="#contact" class="btn-primary">Commission Your Set</a>
     </div>
   </section>
 
-  <!-- ===== ON-CAR GALLERY ===== -->
-  <section id="designs">
-    <div class="gallery-head">
-<div>
-        <div class="section-label" style="color:rgba(240,232,208,0.4);">The Designs<span style="background:rgba(240,232,208,0.2);"></span></div>
-        <h2 class="section-title">On the<br><em>Road</em></h2>
+  <!-- ON-CAR GALLERY -->
+  <section id="on-car">
+    <div class="gallery-head" style="background-color:var(--cream-dk);">
+      <div>
+        <div class="section-label" style="color:var(--navy);opacity:0.6;">On the Road</div>
+        <h2 class="section-title" style="color:var(--navy);">On the<br><em style="color:var(--orange);">Road</em></h2>
       </div>
-      <span class="gallery-ref">VWC — 003</span>
+      <span class="gallery-ref" style="color:rgba(38,48,64,0.3);">VWC — 003</span>
     </div>
-
     <div class="on-car-grid">
- <div class="on-car-item">
-      <img src="https://vanguardwheelco.com/images/BRD-Sprintstar-on-ID-Buzz.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-       
+      <div class="on-car-item">
+        <img src="https://vanguardwheelco.com/images/BRD-Sprintstar-on-ID-Buzz.png" alt="BRD on ID Buzz" onerror="this.style.display='none'">
+        <div class="on-car-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
       <div class="on-car-item">
-            <img src="https://vanguardwheelco.com/images/Phone-dials-on-Rivian-R3X.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <img src="https://vanguardwheelco.com/images/Phone-dials-on-Rivian-R3X.png" alt="Phone Dials on Rivian" onerror="this.style.display='none'">
+        <div class="on-car-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
       <div class="on-car-item">
-        	<img src="https://vanguardwheelco.com/images/Racing-ID-Buzz.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <img src="https://vanguardwheelco.com/images/Racing-ID-Buzz.png" alt="Racing ID Buzz" onerror="this.style.display='none'">
+        <div class="on-car-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
       <div class="on-car-item">
-      <img src="https://vanguardwheelco.com/images/IMG-2744.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <img src="https://vanguardwheelco.com/images/IMG-2744.png" alt="On vehicle" onerror="this.style.display='none'">
+        <div class="on-car-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
       <div class="on-car-item">
-      <img src="https://vanguardwheelco.com/images/PDC-on-911.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <img src="https://vanguardwheelco.com/images/PDC-on-911.png" alt="PDC on 911" onerror="this.style.display='none'">
+        <div class="on-car-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
       <div class="on-car-item">
-      <img src="https://vanguardwheelco.com/images/Porsche-cookie-cutter-on-911.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
+        <img src="https://vanguardwheelco.com/images/Porsche-cookie-cutter-on-911.png" alt="Cookie Cutter on 911" onerror="this.style.display='none'">
+        <div class="on-car-overlay"><span class="gallery-item-tag">On Vehicle</span></div>
       </div>
     </div>
-
     <div class="on-car-foot">
       <a href="#contact" class="btn-primary">Commission Your Set</a>
     </div>
   </section>
 
-  <!-- ===== ABOUT VANGUARD WHEEL CO. ===== -->
+  <!-- ABOUT -->
   <section id="about">
     <div class="about-strip" aria-hidden="true"></div>
     <div class="about-flame" aria-hidden="true">
@@ -1272,7 +440,6 @@
         <path d="M28.88217,282.97456l.78203-78.9849C23.40797,141.42737-20.52025,60.73002,11.67754,18.64887,41.04258-20.41873,169.92174,2.82612,220.47919,79.6471c29.71709,49.64184-17.25761,76.0047,1.41325,100.50236,18.07247,22.52482,64.27716,16.59008,84.60991,57.46743,26.58897,62.35043-230.69846,111.8301-281.53032,112.61213l3.91014-67.25447Z" fill="#e8631a"/>
       </svg>
     </div>
-
     <div class="about-inner">
       <div class="about-left">
         <div class="section-label">About Vanguard Wheel Co.</div>
@@ -1284,13 +451,11 @@
           <p>The designs draw from an era when wheels were actually designed — when the spoke count, the dish, the lip all meant something. That language still holds up. What didn't hold up were the methods. Modern manufacturing is lighter, stronger, and more precise than anything from the golden era. We use it without apology.</p>
         </div>
       </div>
-
       <div class="about-stats">
         <div class="stat-item">
           <div class="stat-num">100%</div>
           <div class="stat-lbl">Made to Order</div>
         </div>
-       
         <div class="stat-item">
           <div class="stat-num">∞</div>
           <div class="stat-lbl">Finish combinations</div>
@@ -1299,7 +464,7 @@
     </div>
   </section>
 
-  <!-- ===== JOURNAL ===== -->
+  <!-- JOURNAL -->
   <section id="blog">
     <div class="blog-head">
       <div>
@@ -1307,7 +472,6 @@
         <h2 class="section-title">Latest<br>Stories</h2>
       </div>
     </div>
-
     <div class="blog-grid">
       <a href="/blog/post-1.html" class="blog-card">
         <div class="blog-card-img">
@@ -1320,7 +484,6 @@
           <span class="blog-card-link">Read Article →</span>
         </div>
       </a>
-
       <a href="/blog/post-2.html" class="blog-card">
         <div class="blog-card-img">
           <img src="https://vanguardwheelco.com/images/IMG-2750.png" alt="The Monarchs: Building Something Real, Together" loading="lazy">
@@ -1335,7 +498,7 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- CONTACT -->
   <section id="contact">
     <div class="contact-accent" aria-hidden="true"></div>
     <div class="contact-inner">
@@ -1348,25 +511,15 @@
           <a href="mailto:info@vanguardwheelco.com" class="btn-primary" style="background-color:var(--cream);color:var(--navy);">Send an Email</a>
         </div>
       </div>
-
       <div class="contact-details">
-        <div class="contact-detail-item">
-          <div class="contact-dot"></div>
-          <span>916.346.8858</span>
-        </div>
-        <div class="contact-detail-item">
-          <div class="contact-dot"></div>
-          <span>info@vanguardwheelco.com</span>
-        </div>
-        <div class="contact-detail-item">
-          <div class="contact-dot"></div>
-          <span>@vanguardwheelco</span>
-        </div>
+        <div class="contact-detail-item"><div class="contact-dot"></div><span>916.346.8858</span></div>
+        <div class="contact-detail-item"><div class="contact-dot"></div><span>info@vanguardwheelco.com</span></div>
+        <div class="contact-detail-item"><div class="contact-dot"></div><span>@vanguardwheelco</span></div>
       </div>
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
@@ -1376,6 +529,7 @@
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="/">Home</a>
         <a href="#designs">Designs</a>
+        <a href="#on-car">On the Road</a>
         <a href="#blog">Journal</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -1385,7 +539,6 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
     const toggle = document.querySelector('.menu-toggle');
     const nav = document.getElementById('site-nav');
     toggle.addEventListener('click', () => {
