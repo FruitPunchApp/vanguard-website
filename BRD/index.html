@@ -109,6 +109,11 @@
       .cta-links a { width: 100%; max-width: 320px; text-align: center; }
       .app-grid { grid-template-columns: 1fr !important; }
       .article-body { padding: 3rem 1.25rem; }
+      .product-hero { display: flex; flex-direction: column; }
+	  .product-hero-image { max-height: 50vw; min-height: 220px; }
+	  .product-hero-overlay { display: none; }
+	  .product-hero-label { position: static; background-color: var(--navy); padding: 1.5rem 1.5rem 1.75rem; left: auto; bottom: auto; }
+	  .product-name { font-size: clamp(3rem, 12vw, 5rem); }
     }
     /* PRODUCT HERO */
     .product-hero { background-color: var(--navy); position: relative; overflow: hidden; }
@@ -201,7 +206,7 @@
     </div>
   </div>
   <div class="product-hero">
-    <img class="product-hero-image" src="https://vanguardwheelco.com/images/IMG-1589.png" alt="Vanguard BRD">
+    <img class="product-hero-image" src="https://vanguardwheelco.com/images/BRD updated render.png" alt="Vanguard BRD">
     <div class="product-hero-overlay"></div>
     <div class="product-hero-label">
       <p class="product-eyebrow">Vanguard Wheel Co. · Wheel Design</p>
