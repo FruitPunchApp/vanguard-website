@@ -73,7 +73,7 @@
     .hero { position: relative; height: 78vh; min-height: 500px; background-color: var(--navy); overflow: hidden; }
     .hero-triangle { position: absolute; inset: 0; z-index: 3; }
     .hero-triangle svg { width: 100%; height: 100%; }
-    .hero-photo { position: absolute; inset: 0; z-index: 1; background-image: url('https://vanguardwheelco.com/images/Website-hero-1920.png'); background-size: cover; background-position: center; opacity: 1; }
+    .hero-photo { position: absolute; inset: 0; z-index: 1; background-image: url('https://vanguardwheelco.com/images/KXT54867.png'); background-size: cover; background-position: center; opacity: 1; }
     .hero-gradient { position: absolute; inset: 0; z-index: 2; background: linear-gradient(to top, rgba(38,48,64,0.92) 0%, rgba(38,48,64,0.4) 50%, rgba(38,48,64,0.15) 100%); }
     .hero-flame { position: absolute; bottom: 0; left: 0; width: 220px; height: 420px; z-index: 4; }
     .hero-flame svg { width: 100%; height: 100%; }
@@ -112,38 +112,48 @@
     .gallery-head .section-title { font-size: clamp(3rem, 7vw, 6rem); color: var(--cream); }
     .gallery-head .section-title em { color: var(--orange); font-style: italic; }
     .gallery-ref { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(240,232,208,0.2); white-space: nowrap; padding-bottom: 0.5rem; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; max-width: 1200px; margin: 0 auto; }
-    .gallery-item { position: relative; overflow: hidden; cursor: pointer; background: var(--navy); }
-    .gallery-item:nth-child(1) { grid-column: span 7; grid-row: span 2; }
-    .gallery-item:nth-child(2) { grid-column: span 5; }
-    .gallery-item:nth-child(3) { grid-column: span 5; }
-    .gallery-item:nth-child(4) { grid-column: span 3; }
-    .gallery-item:nth-child(5) { grid-column: span 3; }
-    .gallery-item:nth-child(6) { grid-column: span 3; }
-    .gallery-item:nth-child(7) { grid-column: span 3; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 200px; filter: saturate(0.85); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
-    .gallery-item:hover img { transform: scale(1.06); filter: saturate(1); }
     .gallery-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; border: 1px dashed rgba(240,232,208,0.1); }
     .gallery-placeholder span { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,208,0.2); }
-    .gallery-item-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,48,64,0.7) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.25rem; }
-    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-    .gallery-item-tag { font-family: 'Barlow Condensed', sans-serif; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); border-left: 2px solid var(--orange); padding-left: 0.5rem; }
     .gallery-foot { padding: 2.5rem 4rem; display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
     .gallery-foot p { font-family: 'Courier Prime', monospace; font-size: 0.7rem; color: rgba(240,232,208,0.3); letter-spacing: 0.1em; }
+    .gallery-foot-solo { justify-content: flex-end; }
 
-    /* ON-CAR GALLERY */
-    #on-car { background-color: var(--cream-dk); padding: 5rem 0 0; }
-    .on-car-head { padding: 0 4rem 3rem; }
-    .on-car-head .section-title { font-size: clamp(3rem, 7vw, 6rem); color: var(--navy); }
-    .on-car-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 1500px; margin: 0 auto; }
+    /* FEATURED WHEELS (2x2 quadrant grid) */
+    .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; max-width: 1600px; margin: 0 auto; padding: 0 4rem; }
+    .featured-card { position: relative; display: block; aspect-ratio: 1 / 1; background: var(--navy); overflow: hidden; }
+    .featured-card-img { position: absolute; inset: 0; }
+    .featured-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.85); transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
+    .featured-card:hover .featured-card-img img { transform: scale(1.06); filter: saturate(1); }
+    .featured-card-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem; background: linear-gradient(to top, rgba(38,48,64,0.94) 0%, rgba(38,48,64,0.55) 45%, transparent 100%); display: flex; flex-direction: column; }
+    .featured-card-tag { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.75rem; }
+    .featured-card-name { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 800; text-transform: uppercase; color: var(--cream); letter-spacing: 0.01em; line-height: 1; margin-bottom: 0.85rem; }
+    .featured-card-price { font-family: 'Courier Prime', monospace; font-size: 0.72rem; letter-spacing: 0.05em; color: rgba(240,232,208,0.85); margin-bottom: 0.85rem; }
+    .featured-card-price span { color: rgba(240,232,208,0.5); }
+    .featured-card-line { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: rgba(240,232,208,0.75); max-width: 34ch; margin-bottom: 1.25rem; }
+    .featured-card-link { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
+    .featured-card:hover .featured-card-link { gap: 0.85rem; }
+    .featured-card-soon .featured-card-img { display: flex; align-items: center; justify-content: center; }
+    .featured-card-soon .gallery-placeholder { position: static; width: 100%; height: 100%; }
+    .featured-card-soon .featured-card-body { background: none; position: static; padding: 3rem; height: 100%; justify-content: flex-end; }
+    .featured-card-soon .featured-card-name { color: rgba(240,232,208,0.5); }
+    .featured-card-soon .featured-card-line { color: rgba(240,232,208,0.35); }
+
+    /* BRD CALLOUT */
+    .brd-callout { max-width: 1100px; margin: 0 auto; padding: 0 4rem 4rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; border-top: 1px solid rgba(240,232,208,0.08); padding-top: 2.5rem; }
+    .brd-callout p { font-size: 0.85rem; font-weight: 300; color: rgba(240,232,208,0.5); max-width: 480px; line-height: 1.6; }
+    .brd-callout p strong { color: var(--cream); font-weight: 500; }
+    .brd-callout-link { white-space: nowrap; }
+
+    /* CUSTOM WORK (formerly ON-CAR GALLERY) — intentionally small/secondary */
+    #custom { background-color: var(--cream-dk); padding: 3rem 0 0; }
+    .custom-head { padding: 0 4rem 1.5rem; }
+    .custom-title { font-size: clamp(1.8rem, 4vw, 3rem) !important; color: var(--navy); }
+    .custom-sub { max-width: 640px; margin: 0 4rem 2rem; font-size: 0.85rem; font-weight: 300; line-height: 1.7; color: rgba(38,48,64,0.6); }
+    .on-car-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 900px; margin: 0 auto; }
     .on-car-item { position: relative; overflow: hidden; background: var(--navy); }
-    .on-car-item img { width: 100%; height: 300px; object-fit: cover; display: block; filter: saturate(0.8); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
+    .on-car-item img { width: 100%; height: 160px; object-fit: cover; display: block; filter: saturate(0.8); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .on-car-item:hover img { transform: scale(1.05); filter: saturate(1); }
-    .on-car-placeholder { width: 100%; height: 300px; display: flex; align-items: center; justify-content: center; border: 1px dashed rgba(240,232,208,0.1); }
-    .on-car-placeholder span { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,208,0.2); }
-    .on-car-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,48,64,0.6), transparent 50%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 1.25rem; }
-    .on-car-item:hover .on-car-overlay { opacity: 1; }
-    .on-car-foot { padding: 2.5rem 4rem; display: flex; justify-content: flex-end; max-width: 1100px; margin: 0 auto; }
+    .on-car-foot { padding: 1.5rem 4rem 3rem; display: flex; justify-content: flex-end; max-width: 900px; margin: 0 auto; }
 
     /* ABOUT */
     #about { background-color: var(--navy); position: relative; overflow: hidden; }
@@ -211,8 +221,9 @@
       :root { --cream: #e8e0c8; --cream-dk: #ddd5bc; --white: #e0d8c0; }
       #blog { background-color: var(--navy-dk); }
       .blog-head .section-title { color: var(--cream); }
-      #on-car { background-color: #1a2230; }
-      .on-car-head .section-title { color: var(--cream); }
+      #custom { background-color: #1a2230; }
+      .on-car-head .section-title, .custom-title { color: var(--cream); }
+      .custom-sub { color: rgba(240,232,208,0.5); }
       #contact { background-color: #1e2a3a; }
       .contact-title { color: var(--cream); }
       .contact-sub { color: rgba(240,232,208,0.5); }
@@ -225,10 +236,10 @@
       .about-inner { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 2rem 4rem; }
       .contact-inner { grid-template-columns: 1fr; }
       .contact-accent { display: none; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-item:nth-child(n) { grid-column: span 1; grid-row: span 1; }
-      .gallery-item:nth-child(1) { grid-column: span 2; }
+      .featured-grid { grid-template-columns: 1fr 1fr; padding: 0 2rem; }
+      .brd-callout { padding: 0 2rem 3rem; padding-top: 2rem; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
       .on-car-grid { grid-template-columns: 1fr 1fr; }
+      .custom-sub { margin: 0 2rem 1.5rem; }
       .blog-grid { grid-template-columns: 1fr; }
     }
 
@@ -244,13 +255,15 @@
       .hero-ref { right: 1.5rem; }
       .gallery-head { padding: 0 1.5rem 2rem; flex-direction: column; align-items: flex-start; gap: 0.5rem; }
       .gallery-foot { padding: 1.5rem; }
+      .custom-head { padding: 0 1.5rem 1.25rem; }
+      .custom-sub { margin: 0 1.5rem 1.5rem; }
       .on-car-head { padding: 0 1.5rem 2rem; }
-      .on-car-foot { padding: 1.5rem; }
+      .on-car-foot { padding: 1rem 1.5rem 2rem; }
       #blog { padding: 3.5rem 1.5rem; }
       .blog-head { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .contact-inner { padding: 4rem 1.5rem; }
-      .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item:nth-child(n) { grid-column: span 1; }
+      .featured-grid { grid-template-columns: 1fr; padding: 0 1.5rem; }
+      .brd-callout { padding: 0 1.5rem 2.5rem; padding-top: 1.75rem; }
       .on-car-grid { grid-template-columns: 1fr; }
       .about-strip { height: 50px; }
       .hero-actions { flex-direction: column; }
@@ -292,7 +305,7 @@
       <nav class="header-nav" id="site-nav" aria-label="Main navigation">
         <a href="https://vanguardwheelco.com">Home</a>
         <a href="#designs">Designs</a>
-        <a href="#on-car">On the Road</a>
+        <a href="#custom">Custom Work</a>
         <a href="#blog">Journal</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -328,7 +341,7 @@
       </div>
       <div class="hero-actions">
         <button class="btn-primary" onclick="document.getElementById('designs').scrollIntoView({behavior:'smooth'})">Explore the Designs</button>
-        <a href="#contact" class="btn-ghost">Commission a Set</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
       </div>
     </div>
   </section>
@@ -336,99 +349,100 @@
   <!-- MARQUEE -->
   <div class="marquee-strip" aria-hidden="true">
     <div class="marquee-track">
-      <span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Made to Order</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span><span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Made to Order</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span>
+      <span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span><span>Bespoke Design</span><span class="dot">✦</span><span>Forged Craftsmanship</span><span class="dot">✦</span><span>Retro Aesthetics</span><span class="dot">✦</span><span>Modern Engineering</span><span class="dot">✦</span><span>Custom Finish</span><span class="dot">✦</span>
     </div>
   </div>
 
-  <!-- WHEEL GALLERY -->
+  <!-- FEATURED WHEELS -->
   <section id="designs">
     <div class="gallery-head">
       <div>
-        <div class="section-label" style="color:rgba(240,232,208,0.4);">The Designs</div>
-        <h2 class="section-title">Wheel<br><em>Gallery</em></h2>
+        <div class="section-label" style="color:rgba(240,232,208,0.4);">The Lineup</div>
+        <h2 class="section-title">Featured<br><em>Wheels</em></h2>
       </div>
       <span class="gallery-ref">VWC — 002</span>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/IMG-1842.png" alt="Featured wheel design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>Featured Shot</span></div>
-
+    <div class="featured-grid">
+      <a href="/BRD/" class="featured-card">
+        <div class="featured-card-img">
+          <img src="https://vanguardwheelco.com/images/BRD-cropped.png" alt="BRD wheel" loading="lazy">
+        </div>
+        <div class="featured-card-body">
+          <span class="featured-card-tag">VWC — BRD</span>
+          <h3 class="featured-card-name">BRD</h3>
+          <p class="featured-card-price">Starting at $750/wheel <span>+ shipping</span></p>
+          <p class="featured-card-line">Where it started. Inspired by the BRM, built for one car.</p>
+          <span class="featured-card-link">View BRD →</span>
+        </div>
+      </a>
+      <a href="/PDC/" class="featured-card">
+        <div class="featured-card-img">
+          <img src="https://vanguardwheelco.com/images/Taza-cropped.png" alt="Taza wheel">
+        </div>
+        <div class="featured-card-body">
+          <span class="featured-card-tag">VWC — TAZA</span>
+          <h3 class="featured-card-name">Taza</h3>
+          <p class="featured-card-price">Starting at $750/wheel <span>+ shipping</span></p>
+          <p class="featured-card-line">Detroit style meets Speedline. Two lineages that were never supposed to overlap, until they did.</p>
+          <span class="featured-card-link">View Taza →</span>
+        </div>
+      </a>
+      <a href="/PDC/" class="featured-card">
+        <div class="featured-card-img">
+          <img src="https://vanguardwheelco.com/images/IMG-1592.png" alt="SC1 wheel">
+        </div>
+        <div class="featured-card-body">
+          <span class="featured-card-tag">VWC — REJILLA</span>
+          <h3 class="featured-card-name">Rejilla</h3>
+          <p class="featured-card-price">Est. from $750/wheel <span>+ shipping</span></p>
+          <p class="featured-card-line">A mesh-style three-piece, built up rather than cast.</p>
+          <span class="featured-card-link">View Rejilla →</span>
       </div>
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/IMG-1886.png" alt="Wheel detail" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>Detail Shot</span></div>
-
-      </div>
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/IMG-1592.png" alt="Wheel on vehicle" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>On-Car Shot</span></div>
-
-      </div>
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/PCC.png" alt="Wheel finish" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>Finish Detail</span></div>
-
-      </div>
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/IMG-2986.png" alt="Wheel spoke design" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>Spoke Design</span></div>
-
-      </div>
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/IMG-3024.png" alt="Wheel lifestyle" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>Lifestyle Shot</span></div>
-
-      </div>
-      <div class="gallery-item">
-        <img src="https://vanguardwheelco.com/images/Corvette-Standard-18x10-5J-rim-profile-update.png" alt="Corvette wheel" onerror="this.style.display='none'" onload="this.nextElementSibling.style.display='none'">
-        <div class="gallery-placeholder"><span>Coming Soon</span></div>
-
+      </a>
+  	 <a href="/PDC/" class="featured-card">
+        <div class="featured-card-img">
+          <img src="https://vanguardwheelco.com/images/CC-cropped.PNG" alt="Cookie Cutter">
+        </div>
+        <div class="featured-card-body">
+          <span class="featured-card-tag">VWC — CC1</span>
+          <h3 class="featured-card-name">CC1</h3>
+          <p class="featured-card-price">Est. from $750/wheel <span>+ shipping</span></p>
+          <p class="featured-card-line">Inspired by the Cookie Cutter.</p>
+        </div>
+        </a>
       </div>
     </div>
-    <div class="gallery-foot">
-      <p>All wheels are made to order — no two sets are identical.</p>
-      <a href="#contact" class="btn-primary">Commission Your Set</a>
+    <div class="gallery-foot gallery-foot-solo">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+    </div>
+    <div class="brd-callout">
+      <p>Looking for something outside the lineup? Custom design work is available through <strong>The Woodshed</strong>.</p>
+      <a href="#custom" class="btn-ghost brd-callout-link">The Woodshed →</a>
     </div>
   </section>
 
-  <!-- ON-CAR GALLERY -->
-  <section id="on-car">
-    <div class="gallery-head" style="background-color:var(--cream-dk);">
+  <!-- CUSTOM WORK / THE WOODSHED -->
+  <section id="custom" class="custom-section">
+    <div class="gallery-head custom-head" style="background-color:var(--cream-dk);">
       <div>
-        <div class="section-label" style="color:var(--navy);opacity:0.6;">On the Road</div>
-        <h2 class="section-title" style="color:var(--navy);">On the<br><em style="color:var(--orange);">Road</em></h2>
+        <div class="section-label" style="color:var(--navy);opacity:0.6;">Beyond the Lineup</div>
+        <h2 class="section-title custom-title" style="color:var(--navy);">The<br><em style="color:var(--orange);">Woodshed</em></h2>
       </div>
       <span class="gallery-ref" style="color:rgba(38,48,64,0.3);">VWC — 003</span>
     </div>
-    <div class="on-car-grid">
+    <div class="on-car-grid custom-grid">
       <div class="on-car-item">
-        <img src="https://vanguardwheelco.com/images/BRD-Sprintstar-on-ID-Buzz.png" alt="BRD on ID Buzz" onerror="this.style.display='none'">
-
+        <img src="https://vanguardwheelco.com/images/BRD-Sprintstar-on-ID-Buzz.png" alt="Custom work on ID Buzz" onerror="this.style.display='none'">
       </div>
       <div class="on-car-item">
-        <img src="https://vanguardwheelco.com/images/Phone-dials-on-Rivian-R3X.png" alt="Phone Dials on Rivian" onerror="this.style.display='none'">
-
+        <img src="https://vanguardwheelco.com/images/Phone-dials-on-Rivian-R3X.png" alt="Custom work on Rivian" onerror="this.style.display='none'">
       </div>
       <div class="on-car-item">
-        <img src="https://vanguardwheelco.com/images/Racing-ID-Buzz.png" alt="Racing ID Buzz" onerror="this.style.display='none'">
-
-      </div>
-      <div class="on-car-item">
-        <img src="https://vanguardwheelco.com/images/IMG-2744.png" alt="On vehicle" onerror="this.style.display='none'">
-
-      </div>
-      <div class="on-car-item">
-        <img src="https://vanguardwheelco.com/images/PDC-on-911.png" alt="PDC on 911" onerror="this.style.display='none'">
-
-      </div>
-      <div class="on-car-item">
-        <img src="https://vanguardwheelco.com/images/Porsche-cookie-cutter-on-911.png" alt="Cookie Cutter on 911" onerror="this.style.display='none'">
-
+        <img src="https://vanguardwheelco.com/images/Racing-ID-Buzz.png" alt="Custom work on ID Buzz" onerror="this.style.display='none'">
       </div>
     </div>
     <div class="on-car-foot">
-      <a href="#contact" class="btn-primary">Commission Your Set</a>
+      <a href="mailto:info@vanguardwheelco.com?subject=The%20Woodshed%20Inquiry" class="btn-ghost">Inquire →</a>
     </div>
   </section>
 
@@ -443,7 +457,7 @@
     <div class="about-inner">
       <div class="about-left">
         <div class="section-label">About Vanguard Wheel Co.</div>
-        <h2 class="about-title">We don't make<br><em>catalog wheels.</em></h2>
+        <h2 class="about-title">The wheels<br><em>make the car.</em></h2>
         <div class="about-prose">
           <p>You can spend years getting a build exactly right: the stance, the bodywork, the mechanicals, and then put something completely forgettable on the corners. It happens all the time. But it shouldn't.</p>
           <p>The wheels are what tie everything together. They MAKE the car. They're the first thing people notice and the last thing most builders think about. Vanguard Wheel Co. exists to close that gap.</p>
@@ -454,7 +468,7 @@
       <div class="about-stats">
         <div class="stat-item">
           <div class="stat-num">100%</div>
-          <div class="stat-lbl">Made to Order</div>
+          <div class="stat-lbl">Forged</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">∞</div>
@@ -504,7 +518,7 @@
     <div class="contact-inner">
       <div class="contact-left">
         <div class="section-label">Get in Touch</div>
-        <h2 class="contact-title">Ready to<br>commission<br>your set?</h2>
+        <h2 class="contact-title">Let's<br>start the<br>conversation.</h2>
         <p class="contact-sub">Reach out through Instagram or email to start the conversation.</p>
         <div class="contact-links">
           <a href="https://www.instagram.com/vanguardwheelco" class="btn-primary" target="_blank" rel="noopener">Instagram</a>
@@ -534,7 +548,7 @@
       <nav class="footer-nav" aria-label="Footer navigation">
         <a href="/">Home</a>
         <a href="#designs">Designs</a>
-        <a href="#on-car">On the Road</a>
+        <a href="#custom">Custom Work</a>
         <a href="#blog">Journal</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
