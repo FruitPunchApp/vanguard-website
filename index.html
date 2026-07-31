@@ -571,5 +571,27 @@
       });
     });
   </script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Target your hero section container
+    const heroContainer = document.querySelector('.hero-container'); 
+    
+    // 2. Define the critical background image URL
+    const heroImageUrl = "https://vanguardwheelco.com";
+
+    // 3. Create an invisible background image tracker
+    const imgTracker = new Image();
+    imgTracker.src = heroImageUrl;
+
+    // 4. Trigger the fade-in as soon as the image file is ready
+    imgTracker.onload = () => {
+      heroContainer.classList.add('is-loaded');
+    };
+
+    // 5. Fallback: If the image fails or takes too long, fade in anyway after 2 seconds
+    imgTracker.onerror = () => heroContainer.classList.add('is-loaded');
+    setTimeout(() => heroContainer.classList.add('is-loaded'), 2000);
+  });
+</script>
 </body>
 </html>
