@@ -1,26 +1,38 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
     <loc>https://vanguardwheelco.com/</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2025-11-11</lastmod>
+    <lastmod>2026-08-06</lastmod>
   </url>
 
   <url>
-    <loc>https://vanguardwheelco.com/about</loc>
+    <loc>https://vanguardwheelco.com/brd</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2025-11-11</lastmod>
+    <lastmod>2026-08-06</lastmod>
   </url>
 
   <url>
-    <loc>https://vanguardwheelco.com/contact</loc>
+    <loc>https://vanguardwheelco.com/taza</loc>
     <changefreq>monthly</changefreq>
-    <lastmod>2025-11-11</lastmod>
+    <lastmod>2026-08-06</lastmod>
+  </url>
+
+  <url>
+    <loc>https://vanguardwheelco.com/pcc</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2026-08-06</lastmod>
   </url>
 
   <url>
     <loc>https://vanguardwheelco.com/blog/post-1</loc>
+    <changefreq>monthly</changefreq>
+    <lastmod>2025-11-11</lastmod>
+  </url>
+
+  <url>
+    <loc>https://vanguardwheelco.com/blog/post-2</loc>
     <changefreq>monthly</changefreq>
     <lastmod>2025-11-11</lastmod>
   </url>

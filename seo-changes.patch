@@ -1,0 +1,326 @@
+diff --git a/BRD/index.html b/BRD/index.html
+index 004a938..d6a8072 100644
+--- a/BRD/index.html
++++ b/BRD/index.html
+@@ -5,12 +5,12 @@
+   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XYVJ3RYYLT');</script>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Vanguard BRD | Vanguard Wheel Co.</title>
+-  <meta name="description" content="The Vanguard BRD — a modern tribute to the iconic VW BRM wheel." />
++  <title>Vanguard BRD | Forged Volkswagen Wheel | Vanguard Wheel Co.</title>
++  <meta name="description" content="The Vanguard BRD — a forged Volkswagen wheel and modern tribute to the iconic VW BRM. Built for Mk4-Mk8 GTI, Golf R, and air-cooled builds." />
+   <meta name="robots" content="index, follow" />
+   <link rel="canonical" href="https://www.vanguardwheelco.com/brd" />
+-  <meta property="og:title" content="Vanguard BRD | Vanguard Wheel Co." />
+-  <meta property="og:description" content="The Vanguard BRD — a modern tribute to the iconic VW BRM wheel." />
++  <meta property="og:title" content="Vanguard BRD | Forged Volkswagen Wheel | Vanguard Wheel Co." />
++  <meta property="og:description" content="The Vanguard BRD — a forged Volkswagen wheel and modern tribute to the iconic VW BRM." />
+   <meta property="og:image" content="https://vanguardwheelco.com/images/IMG-1589.png" />
+   <meta property="og:url" content="https://www.vanguardwheelco.com/brd" />
+   <meta property="og:type" content="website" />
+@@ -18,6 +18,24 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Barlow:wght@300;400;500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
++
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@type": "Product",
++    "name": "Vanguard BRD",
++    "image": "https://vanguardwheelco.com/images/IMG-1589.png",
++    "description": "Forged Volkswagen wheel inspired by the VW BRM, built for modern water-cooled and air-cooled VW platforms.",
++    "url": "https://vanguardwheelco.com/brd",
++    "brand": {
++      "@type": "Brand",
++      "name": "Vanguard Wheel Co."
++    }
++  }
++  </script>
++  <!-- NOTE: no "offers" block included since pricing is inquiry-based, not fixed —
++       adding a fake price would misrepresent the product to search engines. -->
++
+   <style>
+     :root {
+       --navy:      #263040;
+diff --git a/PCC/index.html b/PCC/index.html
+index b162043..fe7120e 100644
+--- a/PCC/index.html
++++ b/PCC/index.html
+@@ -5,12 +5,12 @@
+   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XYVJ3RYYLT');</script>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Vanguard PCC | Vanguard Wheel Co.</title>
+-  <meta name="description" content="The Vanguard PCC — inspired by the iconic Porsche Cookie Cutter wheels." />
++  <title>Vanguard PCC (CC1) | Forged Volkswagen Wheel | Vanguard Wheel Co.</title>
++  <meta name="description" content="The Vanguard PCC — a forged Volkswagen wheel inspired by the iconic Porsche Cookie Cutter, reworked for modern VW builds." />
+   <meta name="robots" content="index, follow" />
+   <link rel="canonical" href="https://www.vanguardwheelco.com/pcc" />
+-  <meta property="og:title" content="Vanguard PCC | Vanguard Wheel Co." />
+-  <meta property="og:description" content="The Vanguard PCC — inspired by the iconic Porsche Cookie Cutter wheels." />
++  <meta property="og:title" content="Vanguard PCC (CC1) | Forged Volkswagen Wheel | Vanguard Wheel Co." />
++  <meta property="og:description" content="The Vanguard PCC — a forged Volkswagen wheel inspired by the iconic Porsche Cookie Cutter." />
+   <meta property="og:image" content="https://vanguardwheelco.com/images/IMG-1590.png" />
+   <meta property="og:url" content="https://www.vanguardwheelco.com/pcc" />
+   <meta property="og:type" content="website" />
+@@ -18,6 +18,24 @@
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Barlow:wght@300;400;500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
++
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@type": "Product",
++    "name": "Vanguard PCC",
++    "image": "https://vanguardwheelco.com/images/IMG-1590.png",
++    "description": "Forged Volkswagen wheel inspired by the Porsche Cookie Cutter, built for modern water-cooled VW platforms.",
++    "url": "https://vanguardwheelco.com/pcc",
++    "brand": {
++      "@type": "Brand",
++      "name": "Vanguard Wheel Co."
++    }
++  }
++  </script>
++  <!-- NOTE: no "offers" block included since pricing is inquiry-based, not fixed —
++       adding a fake price would misrepresent the product to search engines. -->
++
+   <style>
+     :root {
+       --navy:      #263040;
+diff --git a/PDC/index.html b/PDC/index.html
+index 8b80aff..bbd9d22 100644
+--- a/PDC/index.html
++++ b/PDC/index.html
+@@ -5,19 +5,37 @@
+   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XYVJ3RYYLT');</script>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Vanguard Taza | Vanguard Wheel Co.</title>
+-  <meta name="description" content="The Vanguard Taza — drawing from the Porsche Phone Dial and Cup wheels." />
++  <title>Vanguard Taza | Forged Volkswagen Wheel | Vanguard Wheel Co.</title>
++  <meta name="description" content="The Vanguard Taza — a forged Volkswagen wheel drawing from the Porsche Phone Dial and Cup wheels, built for modern VW builds." />
+   <meta name="robots" content="index, follow" />
+-  <link rel="canonical" href="https://www.vanguardwheelco.com/Taza" />
+-  <meta property="og:title" content="Vanguard Taza | Vanguard Wheel Co." />
+-  <meta property="og:description" content="The Vanguard Taza — drawing from the Porsche Phone Dial and Cup wheels." />
++  <link rel="canonical" href="https://www.vanguardwheelco.com/taza" />
++  <meta property="og:title" content="Vanguard Taza | Forged Volkswagen Wheel | Vanguard Wheel Co." />
++  <meta property="og:description" content="The Vanguard Taza — a forged Volkswagen wheel drawing from the Porsche Phone Dial and Cup wheels." />
+   <meta property="og:image" content="https://vanguardwheelco.com/images/IMG-3024.png" />
+-  <meta property="og:url" content="https://www.vanguardwheelco.com/Taza" />
++  <meta property="og:url" content="https://www.vanguardwheelco.com/taza" />
+   <meta property="og:type" content="website" />
+   <link rel="icon" href="https://vanguardwheelco.com/images/Logo_60px.png" type="image/png" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700&family=Barlow:wght@300;400;500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
++
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@type": "Product",
++    "name": "Vanguard Taza",
++    "image": "https://vanguardwheelco.com/images/IMG-3024.png",
++    "description": "Forged Volkswagen wheel drawing on the Porsche Phone Dial and Cup lineage, built for modern water-cooled VW platforms.",
++    "url": "https://vanguardwheelco.com/taza",
++    "brand": {
++      "@type": "Brand",
++      "name": "Vanguard Wheel Co."
++    }
++  }
++  </script>
++  <!-- NOTE: no "offers" block included since pricing is inquiry-based, not fixed —
++       adding a fake price would misrepresent the product to search engines. -->
++
+   <style>
+     :root {
+       --navy:      #263040;
+diff --git a/_redirects b/_redirects
+new file mode 100644
+index 0000000..0cb85b7
+--- /dev/null
++++ b/_redirects
+@@ -0,0 +1,17 @@
++# Canonicalize old ALL-CAPS folder paths to clean lowercase URLs
++/BRD/*          /brd/:splat         301
++/PCC/*          /pcc/:splat         301
++/PDC/*          /taza/:splat        301
++
++# Serve wheel pages at clean lowercase URLs
++/brd            /BRD/index.html     200
++/pcc            /PCC/index.html     200
++/taza           /PDC/index.html     200
++
++# Blog
++/blog           /blog/index.html    200
++/blog/latest    /blog/post-1.html   200
++/blog/post-1    /blog/post-1.html   200
++/blog/post-2    /blog/post-2.html   200
++
++/               /index.html         200
+diff --git a/_redirects.h b/_redirects.h
+deleted file mode 100644
+index 4cd7826..0000000
+--- a/_redirects.h
++++ /dev/null
+@@ -1,4 +0,0 @@
+-/blog           /blog/index.html   200
+-/blog/latest    /blog/post-1.html 200
+-/blog/post-1    /blog/post-1.html 200
+-/               /index.html        200
+\ No newline at end of file
+diff --git a/index.html b/index.html
+index 006a82d..851d1ef 100644
+--- a/index.html
++++ b/index.html
+@@ -11,17 +11,41 @@
+ 
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+-  <title>Vanguard Wheel Co.</title>
+-  <meta name="description" content="Vanguard Wheel Co.: bespoke wheel design, blending retro inspiration with modern craftsmanship." />
+-  <meta name="keywords" content="Vanguard Wheel Co, custom wheels, vintage wheels, car design, bespoke wheels, forged wheels" />
++  <title>Vanguard Wheel Co. | Bespoke Forged Volkswagen Wheels</title>
++  <meta name="description" content="Bespoke forged wheels for modern Volkswagen builds (Mk4–Mk8, GTI, Golf R). Retro-inspired designs, modern engineering. Based in Portland, Oregon." />
++  <meta name="keywords" content="Vanguard Wheel Co, Volkswagen wheels, VW wheels, forged wheels, custom VW wheels, GTI wheels, Golf R wheels, bespoke wheels, Portland Oregon" />
+   <link rel="canonical" href="https://www.vanguardwheelco.com" />
+   <meta name="robots" content="index, follow" />
+-  <meta property="og:title" content="Vanguard Wheel Co." />
+-  <meta property="og:description" content="Bespoke, made-to-order wheels blending retro aesthetics with modern engineering." />
++  <meta property="og:title" content="Vanguard Wheel Co. | Bespoke Forged Volkswagen Wheels" />
++  <meta property="og:description" content="Bespoke, forged wheels for modern water-cooled Volkswagen builds. Retro aesthetics, modern engineering." />
+   <meta property="og:image" content="https://vanguardwheelco.com/images/Logo_full_size.png" />
+   <meta property="og:url" content="https://www.vanguardwheelco.com" />
+   <meta property="og:type" content="website" />
+   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
++  <script type="application/ld+json">
++  {
++    "@context": "https://schema.org",
++    "@type": "LocalBusiness",
++    "name": "Vanguard Wheel Co.",
++    "url": "https://vanguardwheelco.com",
++    "logo": "https://vanguardwheelco.com/images/Logo_full_size.png",
++    "image": "https://vanguardwheelco.com/images/Logo_full_size.png",
++    "telephone": "+19163468858",
++    "email": "info@vanguardwheelco.com",
++    "sameAs": ["https://www.instagram.com/vanguardwheelco"],
++    "address": {
++      "@type": "PostalAddress",
++      "addressLocality": "Beaverton",
++      "addressRegion": "OR",
++      "addressCountry": "US"
++    },
++    "description": "Bespoke forged wheels for modern Volkswagen builds, designed and based in the Portland/Beaverton, Oregon area."
++  }
++  </script>
++  <!-- NOTE: street address and postal code are not filled in above — I don't have a verified
++       street address on file. Add the real ones (or remove the "address" block entirely if you'd
++       rather not publish a street address) before this goes live. Also double check the phone
++       number format renders correctly for your Google Business Profile if you have one linked. -->
+   <link rel="icon" href="https://vanguardwheelco.com/images/Logo_60px.png" type="image/png" />
+   <link rel="apple-touch-icon" href="https://vanguardwheelco.com/images/Logo_60px.png" />
+   <link rel="preload" href="https://vanguardwheelco.com" as="image" fetchpriority="high">
+@@ -386,7 +410,7 @@
+       <span class="gallery-ref">VWC — 002</span>
+     </div>
+     <div class="featured-grid">
+-      <a href="/BRD/" class="featured-card">
++      <a href="/brd" class="featured-card">
+         <div class="featured-card-img">
+           <img src="https://vanguardwheelco.com/images/BRD-cropped.png" alt="BRD wheel">
+         </div>
+@@ -397,7 +421,7 @@
+           <span class="featured-card-link">View BRD →</span>
+         </div>
+       </a>
+-      <a href="/PDC/" class="featured-card">
++      <a href="/taza" class="featured-card">
+         <div class="featured-card-img">
+           <img src="https://vanguardwheelco.com/images/Taza-cropped.png" alt="Taza wheel">
+         </div>
+@@ -419,17 +443,17 @@
+     <span class="featured-card-link featured-card-link-placeholder"></span>
+   </div>
+ </div>
+-  	 <div class="featured-card featured-card-static">
++  	 <a href="/pcc" class="featured-card">
+         <div class="featured-card-img">
+-          <img src="https://vanguardwheelco.com/images/CC-cropped.PNG" alt="Cookie Cutter">
++          <img src="https://vanguardwheelco.com/images/CC-cropped.PNG" alt="CC1 forged Volkswagen wheel inspired by the Porsche Cookie Cutter">
+         </div>
+         <div class="featured-card-body">
+           <span class="featured-card-tag">VWC — CC1</span>
+           <h3 class="featured-card-name">CC1</h3>
+           <p class="featured-card-line">Inspired by the Cookie Cutter. Made for todays roads.</p>
+-        <span class="featured-card-link featured-card-link-placeholder"></span>
++        <span class="featured-card-link">View CC1 →</span>
+         </div>
+-      </div>
++      </a>
+     </div>
+     <div class="gallery-foot gallery-foot-solo">
+       <a href="#contact" class="btn-primary">Get in Touch</a>
+diff --git a/robots.txt b/robots.txt
+new file mode 100644
+index 0000000..563d066
+--- /dev/null
++++ b/robots.txt
+@@ -0,0 +1,4 @@
++User-agent: *
++Allow: /
++
++Sitemap: https://vanguardwheelco.com/sitemap.xml
+diff --git a/sitemap.xml b/sitemap.xml
+index bfdaa37..27755b2 100644
+--- a/sitemap.xml
++++ b/sitemap.xml
+@@ -1,22 +1,28 @@
+-<?xml version="1.0" encoding="UTF-8"?> 
+-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
++<?xml version="1.0" encoding="UTF-8"?>
++<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+ 
+   <url>
+     <loc>https://vanguardwheelco.com/</loc>
+     <changefreq>monthly</changefreq>
+-    <lastmod>2025-11-11</lastmod>
++    <lastmod>2026-08-06</lastmod>
+   </url>
+ 
+   <url>
+-    <loc>https://vanguardwheelco.com/about</loc>
++    <loc>https://vanguardwheelco.com/brd</loc>
+     <changefreq>monthly</changefreq>
+-    <lastmod>2025-11-11</lastmod>
++    <lastmod>2026-08-06</lastmod>
+   </url>
+ 
+   <url>
+-    <loc>https://vanguardwheelco.com/contact</loc>
++    <loc>https://vanguardwheelco.com/taza</loc>
+     <changefreq>monthly</changefreq>
+-    <lastmod>2025-11-11</lastmod>
++    <lastmod>2026-08-06</lastmod>
++  </url>
++
++  <url>
++    <loc>https://vanguardwheelco.com/pcc</loc>
++    <changefreq>monthly</changefreq>
++    <lastmod>2026-08-06</lastmod>
+   </url>
+ 
+   <url>
+@@ -25,4 +31,10 @@
+     <lastmod>2025-11-11</lastmod>
+   </url>
+ 
++  <url>
++    <loc>https://vanguardwheelco.com/blog/post-2</loc>
++    <changefreq>monthly</changefreq>
++    <lastmod>2025-11-11</lastmod>
++  </url>
++
+ </urlset>

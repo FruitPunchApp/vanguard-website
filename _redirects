@@ -1,0 +1,17 @@
+# Canonicalize old ALL-CAPS folder paths to clean lowercase URLs
+/BRD/*          /brd/:splat         301
+/PCC/*          /pcc/:splat         301
+/PDC/*          /taza/:splat        301
+
+# Serve wheel pages at clean lowercase URLs
+/brd            /BRD/index.html     200
+/pcc            /PCC/index.html     200
+/taza           /PDC/index.html     200
+
+# Blog
+/blog           /blog/index.html    200
+/blog/latest    /blog/post-1.html   200
+/blog/post-1    /blog/post-1.html   200
+/blog/post-2    /blog/post-2.html   200
+
+/               /index.html         200
