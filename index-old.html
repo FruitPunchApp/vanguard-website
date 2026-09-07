@@ -168,17 +168,23 @@
     /* FEATURED WHEELS (2x2 quadrant grid) */
     .featured-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; max-width: 1600px; margin: 0 auto; padding: 0 4rem; }
     .featured-card { position: relative; display: block; aspect-ratio: 1 / 1; background: var(--navy); overflow: hidden; }
+    .featured-card-media-link { position: absolute; inset: 0; z-index: 0; display: block; }
     .featured-card-img { position: absolute; inset: 0; }
     .featured-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.85); transition: transform 0.8s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .featured-card:hover .featured-card-img img { transform: scale(1.06); filter: saturate(1); }
-    .featured-card-body { position: absolute; left: 0; right: 0; bottom: 0; padding: 3rem; background: linear-gradient(to top, rgba(38,48,64,0.94) 0%, rgba(38,48,64,0.55) 45%, transparent 100%); display: flex; flex-direction: column; }
+    .featured-card-body { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; padding: 3rem; background: linear-gradient(to top, rgba(38,48,64,0.94) 0%, rgba(38,48,64,0.55) 45%, transparent 100%); display: flex; flex-direction: column; }
     .featured-card-tag { font-family: 'Courier Prime', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 0.75rem; }
     .featured-card-name { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 800; text-transform: uppercase; color: var(--cream); letter-spacing: 0.01em; line-height: 1; margin-bottom: 0.85rem; }
-    .featured-card-price { font-family: 'Courier Prime', monospace; font-size: 0.72rem; letter-spacing: 0.05em; color: rgba(240,232,208,0.85); margin-bottom: 0.85rem; }
+    .featured-card-line { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: rgba(240,232,208,0.75); max-width: 34ch; margin-bottom: 1.1rem; }
+    .featured-card-price { font-family: 'Courier Prime', monospace; font-size: 0.72rem; letter-spacing: 0.05em; color: rgba(240,232,208,0.85); margin-bottom: 0.35rem; }
     .featured-card-price span { color: rgba(240,232,208,0.5); }
-    .featured-card-line { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: rgba(240,232,208,0.75); max-width: 34ch; margin-bottom: 1.25rem; }
+    .featured-card-shipping { font-family: 'Courier Prime', monospace; font-size: 0.65rem; letter-spacing: 0.05em; color: rgba(240,232,208,0.5); margin-bottom: 1.25rem; }
+    .featured-card-shipping span { color: rgba(240,232,208,0.35); }
+    .featured-card-ctas { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 1.5rem; position: relative; z-index: 2; }
     .featured-card-link { font-family: 'Barlow Condensed', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); display: flex; align-items: center; gap: 0.5rem; transition: gap 0.2s; }
     .featured-card:hover .featured-card-link { gap: 0.85rem; }
+    .featured-card-quote { font-family: 'Barlow Condensed', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream); background: rgba(240,232,208,0.1); border: 1px solid rgba(240,232,208,0.3); padding: 0.5rem 1rem; display: inline-block; transition: background-color 0.2s, border-color 0.2s; }
+    .featured-card-quote:hover { background-color: var(--orange); border-color: var(--orange); }
     .featured-card-soon .featured-card-img { display: flex; align-items: center; justify-content: center; }
     .featured-card-soon .gallery-placeholder { position: static; width: 100%; height: 100%; }
     .featured-card-soon .featured-card-body { background: none; position: static; padding: 3rem; height: 100%; justify-content: flex-end; }
@@ -200,6 +206,9 @@
     .on-car-item { position: relative; overflow: hidden; background: var(--navy); }
     .on-car-item img { width: 100%; height: 160px; object-fit: cover; display: block; filter: saturate(0.8); transition: transform 0.7s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .on-car-item:hover img { transform: scale(1.05); filter: saturate(1); }
+    .on-car-item-cc1 { position: relative; }
+    .on-car-item-cc1 a { display: block; position: relative; }
+    .on-car-item-label { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.6rem 0.75rem; background: linear-gradient(to top, rgba(38,48,64,0.9) 0%, transparent 100%); color: var(--cream); font-family: 'Barlow Condensed', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem; }
     .on-car-foot { padding: 1.5rem 4rem 3rem; display: flex; justify-content: flex-end; max-width: 900px; margin: 0 auto; }
 
     /* ABOUT */
@@ -416,50 +425,82 @@
      
     </div>
     <div class="featured-grid">
-      <a href="/brd" class="featured-card">
-        <div class="featured-card-img">
-          <img src="https://vanguardwheelco.com/images/BRD-cropped.webp" alt="BRD wheel">
-        </div>
+      <div class="featured-card">
+        <a href="/brd" class="featured-card-media-link" aria-label="View BRD">
+          <div class="featured-card-img">
+            <img src="https://vanguardwheelco.com/images/BRD-cropped.webp" alt="BRD wheel">
+          </div>
+        </a>
         <div class="featured-card-body">
           <span class="featured-card-tag">VWC — BRD</span>
           <h3 class="featured-card-name">BRD</h3>
           <p class="featured-card-line">Where it started. Inspired by the BRM, built for one car. Available for all.</p>
-          <span class="featured-card-link">View BRD →</span>
+          <!-- Shipping is quoted per build; update this line if you want a flat/estimated rate shown instead -->
+          <p class="featured-card-price">Starting at <span>$836</span> / wheel</p>
+          <p class="featured-card-shipping">Ships freight — <span>final shipping quoted with your build</span></p>
+          <div class="featured-card-ctas">
+            <a href="/brd" class="featured-card-link">View BRD →</a>
+            <a href="mailto:info@vanguardwheelco.com?subject=Quote%20Request%3A%20BRD" class="featured-card-quote">Request a Quote</a>
+          </div>
         </div>
-      </a>
-      <a href="/taza" class="featured-card">
-        <div class="featured-card-img">
-          <img src="https://vanguardwheelco.com/images/Taza-cropped.webp" alt="Taza wheel">
+      </div>
+      <div class="featured-card">
+        <a href="/sc1" class="featured-card-media-link" aria-label="View SC1">
+          <div class="featured-card-img">
+            <img src="https://vanguardwheelco.com/images/SC1.webp" alt="SC1 wheel">
+          </div>
+        </a>
+        <div class="featured-card-body">
+          <span class="featured-card-tag">VWC — SC1</span>
+          <h3 class="featured-card-name">SC1</h3>
+          <p class="featured-card-line">A mesh-style callback to previous generations, forged rather than cast.</p>
+          <!-- Shipping is quoted per build; update this line if you want a flat/estimated rate shown instead -->
+          <p class="featured-card-price">Starting at <span>$1,134</span> / wheel</p>
+          <p class="featured-card-shipping">Ships freight — <span>final shipping quoted with your build</span></p>
+          <div class="featured-card-ctas">
+            <a href="/sc1" class="featured-card-link">View SC1 →</a>
+            <a href="mailto:info@vanguardwheelco.com?subject=Quote%20Request%3A%20SC1" class="featured-card-quote">Request a Quote</a>
+          </div>
         </div>
+      </div>
+      <div class="featured-card">
+        <a href="/torquent" class="featured-card-media-link" aria-label="View Torquent">
+          <div class="featured-card-img">
+            <img src="https://vanguardwheelco.com/images/Torquent.webp" alt="Torquent wheel">
+          </div>
+        </a>
+        <div class="featured-card-body">
+          <span class="featured-card-tag">VWC — TORQUENT</span>
+          <h3 class="featured-card-name">Torquent</h3>
+          <p class="featured-card-line">A deep-dish tribute to 90s showmanship. Built to turn heads, forged to last.</p>
+          <!-- Shipping is quoted per build; update this line if you want a flat/estimated rate shown instead -->
+          <p class="featured-card-price">Starting at <span>$1,134</span> / wheel</p>
+          <p class="featured-card-shipping">Ships freight — <span>final shipping quoted with your build</span></p>
+          <div class="featured-card-ctas">
+            <a href="/torquent" class="featured-card-link">View Torquent →</a>
+            <a href="mailto:info@vanguardwheelco.com?subject=Quote%20Request%3A%20Torquent" class="featured-card-quote">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="featured-card">
+        <a href="/taza" class="featured-card-media-link" aria-label="View Taza">
+          <div class="featured-card-img">
+            <img src="https://vanguardwheelco.com/images/Taza-cropped.webp" alt="Taza wheel">
+          </div>
+        </a>
         <div class="featured-card-body">
           <span class="featured-card-tag">VWC — TAZA</span>
           <h3 class="featured-card-name">Taza</h3>
           <p class="featured-card-line">Detroit style meets Speedline. Two lineages that were never supposed to overlap.</p>
-          <span class="featured-card-link">View Taza →</span>
+          <!-- Shipping is quoted per build; update this line if you want a flat/estimated rate shown instead -->
+          <p class="featured-card-price">Starting at <span>$836</span> / wheel</p>
+          <p class="featured-card-shipping">Ships freight — <span>final shipping quoted with your build</span></p>
+          <div class="featured-card-ctas">
+            <a href="/taza" class="featured-card-link">View Taza →</a>
+            <a href="mailto:info@vanguardwheelco.com?subject=Quote%20Request%3A%20Taza" class="featured-card-quote">Request a Quote</a>
+          </div>
         </div>
-      </a>
-     <div class="featured-card featured-card-static">
-  <div class="featured-card-img">
-    <img src="https://vanguardwheelco.com/images/SC1.webp" alt="SC1 wheel">
-  </div>
-  <div class="featured-card-body">
-    <span class="featured-card-tag">VWC — Hase</span>
-    <h3 class="featured-card-name">Hase</h3>
-    <p class="featured-card-line">A mesh-style callback to previous generations, forged rather than cast.</p>
-    <span class="featured-card-link featured-card-link-placeholder"></span>
-  </div>
-</div>
-  	 <a href="/pcc" class="featured-card">
-        <div class="featured-card-img">
-          <img src="https://vanguardwheelco.com/images/CC-cropped.webp" alt="CC1 forged Volkswagen wheel inspired by the Porsche Cookie Cutter">
-        </div>
-        <div class="featured-card-body">
-          <span class="featured-card-tag">VWC — CC1</span>
-          <h3 class="featured-card-name">CC1</h3>
-          <p class="featured-card-line">Inspired by the classic Cookie Cutter. Made for todays roads.</p>
-        <span class="featured-card-link">View CC1 →</span>
-        </div>
-      </a>
+      </div>
     </div>
     <div class="gallery-foot gallery-foot-solo">
       <a href="#contact" class="btn-primary">Get in Touch</a>
@@ -481,6 +522,12 @@
     </div>
     <br>
     <div class="on-car-grid custom-grid">
+      <div class="on-car-item on-car-item-cc1">
+        <a href="/studio/cc1">
+          <img src="https://vanguardwheelco.com/images/CC-cropped.webp" alt="CC1 forged Volkswagen wheel inspired by the Porsche Cookie Cutter">
+          <span class="on-car-item-label">CC1 — View the Design →</span>
+        </a>
+      </div>
       <div class="on-car-item">
         <img src="https://vanguardwheelco.com/images/BRD-Sprintstar-on-ID-Buzz.webp" alt="Custom work on ID Buzz" onerror="this.style.display='none'">
       </div>
@@ -556,6 +603,18 @@
         <div class="blog-card-body">
           <p class="blog-card-tag">Community</p>
           <h4 class="blog-card-title">The Monarchs: Building Something Real, Together</h4>
+          <span class="blog-card-link">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/post-3.html" class="blog-card">
+        <!-- Reusing the homepage hero image as a placeholder thumbnail — swap for a real podcast still/screenshot before publishing -->
+        <div class="blog-card-img">
+          <img src="https://vanguardwheelco.com/images/toy-vs-real.webp" alt="On the Fusion 360 Shop Talk Podcast">
+          <div class="blog-card-img-overlay"></div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-tag">Press</p>
+          <h4 class="blog-card-title">On the Fusion 360 Shop Talk Podcast</h4>
           <span class="blog-card-link">Read Article →</span>
         </div>
       </a>
