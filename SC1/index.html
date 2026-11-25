@@ -133,9 +133,9 @@
     .app-rule { flex: 1; height: 1px; background: linear-gradient(to right, rgba(38,48,64,0.2), transparent); }
     .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3px; }
     .app-card { background: var(--navy); overflow: hidden; transition: transform 0.3s; }
-    .app-card:has(.app-card-image img) { width: fit-content; max-width: 100%; }
-	.app-card-image { overflow: hidden; aspect-ratio: 2148 / 859; }
-	.app-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; ... }
+    .app-card-image { overflow: hidden; aspect-ratio: 2148 / 859; } /* photo is 2148×1718 — frame is half its height */
+    .app-card-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; filter: saturate(0.8); transition: transform 0.5s, filter 0.4s; }
+    .app-card:hover .app-card-image img { transform: scale(1.05); filter: saturate(1); }
     .app-card-placeholder { width: 100%; height: 100%; background: var(--navy-dk); display: flex; align-items: center; justify-content: center; }
     .app-card-placeholder span { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,208,0.2); }
     .app-card-body { padding: 1.5rem; }
@@ -255,13 +255,11 @@
         <div class="section-label" style="margin-bottom:0;">On Vehicle</div>
         <div class="app-rule"></div>
       </div>
+      <div class="app-grid">
         <div class="app-card">
           <div class="app-card-image">
-            <div class="app-card-placeholder"><span> <img src="https://vanguardwheelco.com/images/SC1-Green-Caddy.jpg" alt="Vanguard SC1 forged mesh wheels on a green VW Caddy" loading="lazy"> </span></div>
+            <img src="https://vanguardwheelco.com/images/SC1-Green-Caddy.jpg" alt="Vanguard SC1 forged mesh wheels on a green VW Caddy" loading="lazy">
           </div>
-        </div>
-      </div>
-        <div class="app-card">
           <div class="app-card-body">
             <h3 class="app-card-title">Classic VW Builds</h3>
             <p class="app-card-text">Modern Form. Vintage Soul.</p>
