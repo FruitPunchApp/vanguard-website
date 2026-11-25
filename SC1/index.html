@@ -134,8 +134,8 @@
     .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3px; }
     .app-card { background: var(--navy); overflow: hidden; transition: transform 0.3s; }
     .app-card:hover { transform: translateY(-4px); }
-    .app-card-image { height: 220px; overflow: hidden; }
-    .app-card-image img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.8); transition: transform 0.5s, filter 0.4s; }
+    .app-card-image { aspect-ratio: 16 / 9; overflow: hidden; }
+	.app-card-image img { ... object-position: center 60%; ... }
     .app-card:hover .app-card-image img { transform: scale(1.05); filter: saturate(1); }
     .app-card-placeholder { width: 100%; height: 100%; background: var(--navy-dk); display: flex; align-items: center; justify-content: center; }
     .app-card-placeholder span { font-family: 'Courier Prime', monospace; font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(240,232,208,0.2); }
@@ -259,12 +259,7 @@
       <div class="app-grid">
         <div class="app-card">
           <div class="app-card-image">
-            <div class="app-card-placeholder"><span>Add Photo</span></div>
-          </div>
-        </div>
-        <div class="app-card">
-          <div class="app-card-image">
-            <div class="app-card-placeholder"><span>Add Photo</span></div>
+            <div class="app-card-placeholder"><span> <img src="https://vanguardwheelco.com/images/SC1-Green-Caddy.jpg" alt="Vanguard SC1 forged mesh wheels on a green VW Caddy" loading="lazy"> </span></div>
           </div>
         </div>
       </div>
