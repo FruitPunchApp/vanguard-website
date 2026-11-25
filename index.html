@@ -235,10 +235,10 @@
     #blog { background-color: var(--cream); padding: 5rem 4rem; }
     .blog-head { margin-bottom: 3rem; display: flex; align-items: flex-end; gap: 3rem; }
     .blog-head .section-title { font-size: clamp(3rem, 6vw, 5.5rem); color: var(--navy); }
-    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px; }
     .blog-card { background: var(--navy); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); cursor: pointer; }
     .blog-card:hover { transform: translateY(-4px); }
-    .blog-card-img { height: 260px; overflow: hidden; position: relative; }
+    .blog-card-img { aspect-ratio: 670 / 360; overflow: hidden; position: relative; }
     .blog-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(0.7); transition: transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s; }
     .blog-card:hover .blog-card-img img { transform: scale(1.05); filter: saturate(1); }
     .blog-card-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(38,48,64,0.8), transparent 60%); }
@@ -614,6 +614,17 @@
         <div class="blog-card-body">
           <p class="blog-card-tag">Press</p>
           <h4 class="blog-card-title">On the Fusion 360 Shop Talk Podcast</h4>
+          <span class="blog-card-link">Read Article →</span>
+        </div>
+      </a>
+      <a href="/blog/post-4.html" class="blog-card">
+        <div class="blog-card-img">
+          <img src="https://vanguardwheelco.com/images/Pharaoh-Nissan-Z.webp" alt="A Custom Set of Wheels for a Long Time Friend">
+          <div class="blog-card-img-overlay"></div>
+        </div>
+        <div class="blog-card-body">
+          <p class="blog-card-tag">Community</p>
+          <h4 class="blog-card-title">A Custom Set of Wheels for a Long Time Friend</h4>
           <span class="blog-card-link">Read Article →</span>
         </div>
       </a>
